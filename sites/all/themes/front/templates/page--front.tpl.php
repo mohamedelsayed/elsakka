@@ -1,56 +1,78 @@
-<?php global $base_url;?>    
-<?php include_once 'header.php';?>
+<?php global $base_url;?> 
+<?php include_once 'header.php';
+$data = elsayed_get_home_widgets();?>
 <div data-vide-bg="<?php echo $base_url.'/'.path_to_theme();?>/video/sea">
 <div class="container">
-		<div class="row">
-			<div class="jumbotron">
-			  <h1 class="small">مجموعة شركات <span class="bold">السقا للبلاسيتك</span></h1>
-			  <p class="big">تعتبر شركة السقا بلاستيك السقا فوم الشركة الرائدة بمصر والمصنعة لأفلام البولى إيثيلين المستخدمة فى تطبيقات وخدمات مختلفة مثل الزراعة ، والمزارع السمكية ، والتغليف المرن ، والتغليف الصناعى ، والأغشية المستخدمة فى أغراض العزل والتبطين.</p>
-		  </div>
-	</div>
-</div>
-</div>
-<div id="about" class="cta-1">
-	<div class="container">
-		<div class="row text-center white">
-			<h1 class="cta-title">عن الشركة</h1>
-			<p class="cta-sub-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي</p>
+	<div class="row">
+		<div class="jumbotron">
+			<h1 class="small">مجموعة شركات <span class="bold">السقا للبلاسيتك</span></h1>
+			<p class="big">تعتبر شركة السقا بلاستيك السقا فوم الشركة الرائدة بمصر والمصنعة لأفلام البولى إيثيلين المستخدمة فى تطبيقات وخدمات مختلفة مثل الزراعة ، والمزارع السمكية ، والتغليف المرن ، والتغليف الصناعى ، والأغشية المستخدمة فى أغراض العزل والتبطين.</p>
 		</div>
 	</div>
 </div>
-<div id="portfolio" class="section-padding">
-	<div class="container">
-		<div class="row">
-			<div class="page-title text-center">
-				<h1>المنتجات</h1>
-				<p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات. </p>
-				<hr class="pg-titl-bdr-btm"></hr>
+</div>
+<?php if(isset($data['about']) && !empty($data['about'])){
+	$item = $data['about'];
+	$title = '';$body = '';
+	if(isset($item->title)){
+		$title = $item->title;
+	}	
+	if(isset($item->body[LANGUAGE_NONE][0]['value'])){
+		$body = $item->body[LANGUAGE_NONE][0]['value'];
+	}?>
+	<div id="about" class="cta-1">
+		<div class="container">
+			<div class="row text-center white">
+				<h1 class="cta-title"><?php echo $title;?></h1>
+				<p class="cta-sub-title"><?php echo $body;?></p>
 			</div>
 		</div>
-			<div class="port-sec">
-				<div class="col-md-12 fil-btn text-center">
-						<div class="filter wrk-title active" data-filter="all">الكل</div>
-						<div class="filter wrk-title" data-filter=".category-1">منتج</div>
-						<div class="filter wrk-title" data-filter=".category-2">منتج</div>
-						<div class="filter wrk-title lst-cld" data-filter=".category-3">منتج</div>
+	</div>
+<?php }?>
+<div id="portfolio" class="section-padding">
+	<div class="container">
+		<?php if(isset($data['products']) && !empty($data['products'])){
+			$item = $data['products'];
+			$title = '';$body = '';
+			if(isset($item->title)){
+				$title = $item->title;
+			}	
+			if(isset($item->body[LANGUAGE_NONE][0]['value'])){
+				$body = $item->body[LANGUAGE_NONE][0]['value'];
+			}?>
+			<div class="row">
+				<div class="page-title text-center">
+					<h1><?php echo $title;?></h1>
+					<p><?php echo $body;?></p>
+					<hr class="pg-titl-bdr-btm"></hr>
 				</div>
-				<div id="Container">
-							<div class="filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea1.jpg" class="img-responsive"> 
-							</div>
-							<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="4">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
-							</div>
-							<div class="filimg mix category-1 col-md-4 col-sm-4 col-xs-12" data-myorder="1">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea3.jpg" class="img-responsive">								</div>
-							<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea4.jpg" class="img-responsive">								</div>
-							<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea5.jpg" class="img-responsive">
-							</div>
-							<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
-							</div>
+			</div>
+		<?php }?>
+		<div class="port-sec">
+			<div class="col-md-12 fil-btn text-center">
+				<div class="filter wrk-title active" data-filter="all">الكل</div>
+				<div class="filter wrk-title" data-filter=".category-1">منتج</div>
+				<div class="filter wrk-title" data-filter=".category-2">منتج</div>
+				<div class="filter wrk-title lst-cld" data-filter=".category-3">منتج</div>
+			</div>
+			<div id="Container">
+				<div class="filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea1.jpg" class="img-responsive"> 
+				</div>
+				<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="4">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
+				</div>
+				<div class="filimg mix category-1 col-md-4 col-sm-4 col-xs-12" data-myorder="1">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea3.jpg" class="img-responsive">								
+				</div>
+				<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea4.jpg" class="img-responsive">								
+				</div>
+				<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea5.jpg" class="img-responsive">
+				</div>
+				<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
 				</div>
 			</div>
 		</div>
@@ -67,9 +89,9 @@
 						fit: true   // 100% fit in a container
 					});
 				});
-			   </script>
-		 <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-			  <ul class="resp-tabs-list">
+			   	</script>
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+			  	<ul class="resp-tabs-list">
 				  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/v1.jpg" class="img-responsive" alt=""/></span>
 				  <p>injustice game play</p></li>
 				  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/v2.jpg" class="img-responsive" alt=""/></span>
@@ -105,11 +127,21 @@
 <div id="contact" class="section-padding">
 	<div class="container">
 		<div class="row">
-			<div class="page-title text-center">
-				<h1>اتصل بنا</h1>
-				<p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات. </p>
-				<hr class="pg-titl-bdr-btm"></hr>
-			</div>
+			<?php if(isset($data['contact']) && !empty($data['contact'])){
+			$item = $data['contact'];
+			$title = '';$body = '';
+			if(isset($item->title)){
+				$title = $item->title;
+			}	
+			if(isset($item->body[LANGUAGE_NONE][0]['value'])){
+				$body = $item->body[LANGUAGE_NONE][0]['value'];
+			}?>
+				<div class="page-title text-center">
+					<h1><?php echo $title;?></h1>
+					<p><?php echo $body;?></p>
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
+			<?php }?>
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
             

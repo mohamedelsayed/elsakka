@@ -149,6 +149,15 @@ function elsayed_menu() {
         'access arguments' => array('access adminstration page'),
         'access callback' => true,
     );
+	$items['admin/custom/content'] = array(
+    'title' => 'Content',
+    'description' => 'Find and manage content.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('elsayed_node_admin_content'),
+    'access arguments' => array('access content overview'),
+    'weight' => -10,
+    'file' => 'node.admin.inc',
+  );
     return $items;
 }
 function elsayed_user_edit() {
@@ -362,6 +371,14 @@ function elsayed_form_alter(&$form, &$form_state, $form_id){
     if ($form_id == 'user_login') {
         $form['#submit'][] = 'elsayed_user_login_form_submit';
     }
+	if(isset($form['#node']) && $form_id == 'widget_node_form'){		
+		$info = field_info_field('field_identifier');
+		$values = &$info['settings']['allowed_values'];
+		if(!isset($values['products'])){
+			$values['products'] = 'products';
+			field_update_field($info);
+		}
+	}
 }
 function elsayed_form_node_delete_confirm_alter(&$form, $form_state) {
     if(isset($form['nid']['#value'])){
@@ -1460,4 +1477,28 @@ function elsayed_custom_setting_form_validation($form, &$form_state) {
     } elseif ($days <= 0) {
         form_set_error('qbank_question_days', get_shift_languages_string('Number of Days must be greater than 0'));
     }*/
+}
+function elsayed_get_home_widgets(){
+    $start = 0;
+    $limit = 10;
+    $items = array();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'widget')
+            ->propertyCondition('status', 1)
+            ->propertyOrderBy('created', 'DESC');
+    $query->addMetaData('account', user_load(1));
+    $query->range($start, $limit); 
+    $result = $query->execute();
+    if (isset($result['node'])) {
+        $items_nids = array_keys($result['node']);
+        $items = entity_load('node', $items_nids);
+    }
+	$data = array();
+	if(!empty($items)){
+		foreach ($items as $key => $value) {
+			$data[$value->field_identifier[LANGUAGE_NONE][0]['value']] = $value;
+		}
+	}	
+    return $data;	
 }
