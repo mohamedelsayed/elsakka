@@ -18,7 +18,7 @@ if ($dir = rtrim(dirname($_SERVER['SCRIPT_NAME']), '\/')) {
 	$base_path = $dir;
 	$base_url .= $base_path;
 }
-$database = 'elsakka_db';
+$database = 'elsakka';
 $db_host = 'localhost';
 $username = 'root';
 $password = 'root';
@@ -26,8 +26,8 @@ $conf['error_level'] = 0;
 if (strpos($http_host, 'mohamedelsayed.net') !== FALSE) {
 	$conf['css_gzip_compression'] = TRUE;
  	$conf['js_gzip_compression'] = TRUE;
-    $database = 'elsayed_elsakkaplastic';   
-    $username = 'elsayed_elsakkaplastic';
+    $database = 'elsayed_elsakka';   
+    $username = 'elsayed_elsakka';
     $password = '8TSb0q9Db8og';   
 }elseif (strpos($http_host, 'localhost') !== FALSE) {
 	$conf['css_gzip_compression'] = FALSE;
@@ -37,6 +37,9 @@ if (strpos($http_host, 'mohamedelsayed.net') !== FALSE) {
     }else{
         $password = '';    
     }
+}else{
+	$conf['css_gzip_compression'] = TRUE;
+ 	$conf['js_gzip_compression'] = TRUE;	
 }
 $databases = array (
   'default' => 
