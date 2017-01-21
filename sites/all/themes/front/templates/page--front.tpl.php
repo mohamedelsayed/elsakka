@@ -1,3 +1,4 @@
+<?php drupal_set_title('');?>
 <?php global $base_url;?> 
 <?php include_once 'header.php';
 $data = elsayed_get_home_widgets();?>
