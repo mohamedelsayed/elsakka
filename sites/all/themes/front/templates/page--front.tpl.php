@@ -57,30 +57,52 @@ $data = elsayed_get_home_widgets();?>
 				<div class="filter wrk-title lst-cld" data-filter=".category-3">منتج</div>
 			</div>
 			<div id="Container">
-				<div class="filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea1.jpg" class="img-responsive"> 
+				<div class="view_1 view_1-eighth filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea1.jpg" class="img-responsive"></a> 
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>
 				</div>
-				<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="4">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
+				<div class="view_1 view_1-eighth filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="4">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive"></a>
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>
 				</div>
-				<div class="filimg mix category-1 col-md-4 col-sm-4 col-xs-12" data-myorder="1">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea3.jpg" class="img-responsive">								
+				<div class="view_1 view_1-eighth filimg mix category-1 col-md-4 col-sm-4 col-xs-12" data-myorder="1">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea3.jpg" class="img-responsive"></a>
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>								
 				</div>
-				<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea4.jpg" class="img-responsive">								
+				<div class="view_1 view_1-eighth filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea4.jpg" class="img-responsive"></a>
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>								
 				</div>
-				<div class="filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea5.jpg" class="img-responsive">
+				<div class="view_1 view_1-eighth filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea5.jpg" class="img-responsive"></a>
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>
 				</div>
-				<div class="filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive">
+				<div class="view_1 view_1-eighth filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
+					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive"></a>
+                    <div class="mask">
+				<a href="#"><h4>اضغط هنا</h4></a>
+			</div>
 				</div>
+                <a class="inpt" href="#">اعرف المزيد</a>
 			</div>
 		</div>
 	</div>
 </div>
 <div id="service" class="section-padding">
 	<div class="container">
+    <div class="row text-center white">
+				<h1>مكتبة الفيديو</h1>
+			</div>
 		<div class="content-bottom">
 			<script type="text/javascript">
 				jQuery(document).ready(function () {
