@@ -1,4 +1,5 @@
-<?php global $base_url;?>   
+<?php elsayed_redirect_user_to_admin();
+global $base_url;?>   
 <div class="center-container">
 	<nav class="navbar navbar-default">
 		<div class="container">

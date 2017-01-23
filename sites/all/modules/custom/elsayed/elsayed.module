@@ -9,7 +9,7 @@ function elsayed_init(){
     elsayed_update_node_language();
     $GLOBALS['google_api_key'] = 'AIzaSyDGGlo0fNATzYKU761Fx-8VAIJDXu-b3QM';  
     $GLOBALS['limit'] = 6;
-    $GLOBALS['default_image'] = $GLOBALS['base_url'].'/'.path_to_theme().'/img/blank.png';
+    $GLOBALS['default_image'] = $GLOBALS['base_url'].'/'.path_to_theme().'/img/blank.png';	
 }
 function elsayed_menu() {
     $items['page_not_found'] = array(
@@ -1501,4 +1501,16 @@ function elsayed_get_home_widgets(){
 		}
 	}	
     return $data;	
+}
+function elsayed_redirect_user_to_admin(){
+	$arg0 = arg(0);
+	if($arg0 == 'user'){
+		if(user_is_logged_in()){
+			if(elsayed_is_user_admin()){
+				global $base_url;
+				$redirect = $base_url.'/admin';
+                drupal_goto("$redirect");  				
+			}
+		}		
+	}		
 }
