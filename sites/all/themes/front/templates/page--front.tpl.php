@@ -102,6 +102,7 @@ $data = elsayed_get_home_widgets();?>
 	<div class="container">
     <div class="row text-center white">
 				<h1>مكتبة الفيديو</h1>
+                <hr class="pg-titl-bdr-btm">
 			</div>
 		<div class="content-bottom">
 			<script type="text/javascript">
