@@ -93,7 +93,9 @@ $data = elsayed_get_home_widgets();?>
 				<a href="#"><h4>اضغط هنا</h4></a>
 			</div>
 				</div>
+                <div class="col-md-12">
                 <a class="inpt" href="#">اعرف المزيد</a>
+                </div>
 			</div>
 		</div>
 	</div>
