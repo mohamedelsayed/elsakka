@@ -41,7 +41,7 @@ Header
 }
 .navbar-default {
     background-color: #fff;
-	border-bottom:5px solid #000;
+	border-bottom: 3px solid #e7e7e7;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -734,8 +734,16 @@ p.cta-sub-title {
 	width: 35%;
     padding: 10px;
 }
+#user-login .required{
+	border: 2px solid #ccc;
+    border-radius: 15px;
+    color: #333;
+	width: 35%;
+    padding: 10px;
+}
 label {
     color: #949494;
+	display: none !important;
     
 }
 #user-login{
