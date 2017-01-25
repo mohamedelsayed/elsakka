@@ -1,35 +1,9 @@
 <?php drupal_set_title('');?>
 <?php global $base_url;?> 
-<?php include_once 'header.php';
-$data = elsayed_get_home_widgets();?>
-<div data-vide-bg="<?php echo $base_url.'/'.path_to_theme();?>/video/sea">
-<div class="container">
-	<div class="row">
-		<div class="jumbotron">
-			<h1 class="small">مجموعة شركات <span class="bold">السقا للبلاسيتك</span></h1>
-			<p class="big">تعتبر شركة السقا بلاستيك السقا فوم الشركة الرائدة بمصر والمصنعة لأفلام البولى إيثيلين المستخدمة فى تطبيقات وخدمات مختلفة مثل الزراعة ، والمزارع السمكية ، والتغليف المرن ، والتغليف الصناعى ، والأغشية المستخدمة فى أغراض العزل والتبطين.</p>
-		</div>
-	</div>
-</div>
-</div>
-<?php if(isset($data['about']) && !empty($data['about'])){
-	$item = $data['about'];
-	$title = '';$body = '';
-	if(isset($item->title)){
-		$title = $item->title;
-	}	
-	if(isset($item->body[LANGUAGE_NONE][0]['value'])){
-		$body = $item->body[LANGUAGE_NONE][0]['value'];
-	}?>
-	<div id="about" class="cta-1">
-		<div class="container">
-			<div class="row text-center white">
-				<h1 class="cta-title"><?php echo $title;?></h1>
-				<p class="cta-sub-title"><?php echo $body;?></p>
-			</div>
-		</div>
-	</div>
-<?php }?>
+<?php include_once 'header.php';?>
+<?php $data = elsayed_get_home_widgets();?>
+<?php include_once 'home/video.php';?>
+<?php include_once 'home/about.php';?>
 <div id="portfolio" class="section-padding">
 	<div class="container">
 		<?php if(isset($data['products']) && !empty($data['products'])){

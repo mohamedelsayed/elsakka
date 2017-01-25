@@ -21,7 +21,7 @@ scripts[] = js/slick.min.js
 scripts[] = js/move-top.js
 scripts[] = js/custom.js
 ;scripts[] = js/contactform.js
-scripts[] = js/jquery.vide.min.js
+;scripts[] = js/jquery.vide.min.js
 scripts[] = js/easyResponsiveTabs.js
 scripts[] = js/dev.js
 

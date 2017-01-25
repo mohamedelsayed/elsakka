@@ -6,13 +6,17 @@
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */
 $social_image = '';
-$GLOBALS['meta_description'] = '';
-$GLOBALS['meta_keywords'] = '';
+if(!isset($GLOBALS['meta_description'])){
+	$GLOBALS['meta_description'] = '';
+}
+if(!isset($GLOBALS['meta_keywords'])){
+	$GLOBALS['meta_keywords'] = '';
+}
 $sitelang = elsayed_get_language_from_url();
 $base_url_with_lang = elsayed_get_base_url_with_lang();?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
-<head>
+	<head>
         <!-- Basic Page Needs ================================================== -->
         <meta charset="utf-8">
         <title><?php echo $head_title;?></title>
@@ -27,35 +31,7 @@ $base_url_with_lang = elsayed_get_base_url_with_lang();?>
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php print $styles;?>
-        <?php print $scripts;?>
-        <script type="text/javascript">
-		//<![CDATA[
-		jQuery(document).ready(function(){		
-			jQuery("#jquery_jplayer_1").jPlayer({
-				ready: function () {
-					jQuery(this).jPlayer("setMedia", {
-						title: "Big Buck Bunny",
-						m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
-						poster: "img/vid.png"
-					});
-				},
-				swfPath: "../../dist/jplayer",
-				supplied: "m4v",
-				size: {
-					width: "379px",
-					height: "250px",
-					cssClass: "jp-video-360p"
-				},
-				useStateClassSkin: true,
-				autoBlur: false,
-				smoothPlayBar: true,
-				keyEnabled: true,
-				remainingDuration: true,
-				toggleDuration: true
-			});
-		});
-		//]]>
-		</script> 
+        <?php print $scripts;?>        
     </head>    
     <body class="<?php print $classes;?>" <?php print $attributes; ?>>       
         <?php print $page_top; ?>
