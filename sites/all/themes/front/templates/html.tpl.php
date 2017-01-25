@@ -5,7 +5,10 @@
  * @link http://www.mohamedelsayed.net
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */
-$social_image = '';
+global $base_url;
+if(!isset($GLOBALS['social_image'])){
+	$GLOBALS['social_image'] = $base_url.'/'.path_to_theme().'/img/logo.png';
+}
 if(!isset($GLOBALS['meta_description'])){
 	$GLOBALS['meta_description'] = '';
 }
@@ -20,8 +23,8 @@ $base_url_with_lang = elsayed_get_base_url_with_lang();?>
         <!-- Basic Page Needs ================================================== -->
         <meta charset="utf-8">
         <title><?php echo $head_title;?></title>
-        <meta property="og:image" content="<?php echo $social_image; ?>">
-        <meta name="twitter:image" content="<?php echo $social_image; ?>">
+        <meta property="og:image" content="<?php echo $GLOBALS['social_image']; ?>">
+        <meta name="twitter:image" content="<?php echo $GLOBALS['social_image']; ?>">
         <meta name="description" content="<?php echo $GLOBALS['meta_description']; ?>">
         <meta name="keywords" content="<?php echo $GLOBALS['meta_keywords']; ?>">
         <meta name="author" content="Mohamed Elsayed">

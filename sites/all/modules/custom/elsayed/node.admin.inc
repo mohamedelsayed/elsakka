@@ -414,6 +414,7 @@ function elsayed_node_admin_content($form, $form_state) {
   $form['#submit'][] = 'node_filter_form_submit';
   $form['admin'] = elsayed_node_admin_nodes();
   $arg3 = trim(arg(3));
+  global $base_url;
 	if($arg3 != ''){
 		$form['filter']['filters']['status']['filters']['type']['#value'] = $arg3;
 		$form['filter']['filters']['status']['filters']['type']['#default_value'] = $arg3;
@@ -421,6 +422,9 @@ function elsayed_node_admin_content($form, $form_state) {
 	drupal_add_css('.form-item-type{
 		display:none !important;
 	}', 'inline');
+	$form['#prefix'] = '<ul class="action-links">
+		<li><a href="'.$base_url.'/node/add/'.$arg3.'">Add</a></li>
+	</ul>';
   return $form;
 }
 
