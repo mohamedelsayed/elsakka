@@ -103,7 +103,7 @@ Header
     background-color: transparent;
     padding-top: 255px;
 }
-.jumbotron p.big
+.jumbotron .big
 {
 	width: 605px;
     line-height: 25px;

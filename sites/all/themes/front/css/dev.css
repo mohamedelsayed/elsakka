@@ -24,6 +24,13 @@
 #videoMessage h3{font-size: 2.0em;color:#ffffff;text-align:center;}
 .videoClick {text-align:center}
 .videoClick a{color:white;background-color:rgba(241, 241, 241, 0.25);font-size: 1.7em;cursor:pointer;cursor:hand}
+red{
+	color: #e20612;
+    font-weight: bold;	
+}
+.jumbotron p{
+	font-size: 16px;
+}
 /*.submitted{
 	display: none;
 }

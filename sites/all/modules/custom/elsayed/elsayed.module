@@ -378,6 +378,16 @@ function elsayed_form_alter(&$form, &$form_state, $form_id){
 			$values['products'] = 'products';
 			field_update_field($info);
 		}
+		if(!isset($values['home_video'])){
+			$values['home_video'] = 'Home Video';
+			field_update_field($info);
+		}
+		$arg1 = arg(1);
+		if($arg1 == 5){
+			$form['field_video_file'][LANGUAGE_NONE][0]['#required'] = 1;			
+		}else{
+			$form['field_video_file']['#access'] = 0;
+		}
 	}
 }
 function elsayed_form_node_delete_confirm_alter(&$form, $form_state) {
