@@ -1,5 +1,5 @@
-<?php if(isset($data['about']) && !empty($data['about'])){
-	$item = $data['about'];
+<?php if(isset($home_widgets['about']) && !empty($home_widgets['about'])){
+	$item = $home_widgets['about'];
 	$title = '';$body = '';
 	if(isset($item->title)){
 		$title = $item->title;

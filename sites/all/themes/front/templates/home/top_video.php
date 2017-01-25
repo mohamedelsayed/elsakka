@@ -1,5 +1,5 @@
-<?php if(isset($data['home_video']) && !empty($data['home_video'])){
-	$item = $data['home_video'];
+<?php if(isset($home_widgets['home_video']) && !empty($home_widgets['home_video'])){
+	$item = $home_widgets['home_video'];
 	$title = '';$body = '';$video_file = '';
 	if(isset($item->title)){
 		$title = $item->title;
