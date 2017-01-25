@@ -18,6 +18,7 @@ scripts[] = js/jquery.jplayer.min.js
 scripts[] = js/jquery.easing.min.js
 scripts[] = js/jquery.mixitup.js
 scripts[] = js/slick.min.js
+scripts[] = js/move-top.js
 scripts[] = js/custom.js
 ;scripts[] = js/contactform.js
 scripts[] = js/jquery.vide.min.js
