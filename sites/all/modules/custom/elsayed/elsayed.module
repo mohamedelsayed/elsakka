@@ -157,7 +157,14 @@ function elsayed_menu() {
     'access arguments' => array('access content overview'),
     'weight' => -10,
     'file' => 'node.admin.inc',
-  );
+  	);
+	$items['videos'] = array(
+        'title' => 'Videos',
+        'page callback' => 'elsayed_videos',
+        'page arguments' => array(),
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content'),
+    );
     return $items;
 }
 function elsayed_user_edit() {
@@ -754,6 +761,10 @@ function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1){
 function elsayed_products(){
     $output = '';
     return $output;	
+}
+function elsayed_videos(){
+	$output = '';
+    return $output;		
 }
 function elsayed_articles(){
     $output = '';
