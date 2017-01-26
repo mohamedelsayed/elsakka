@@ -795,8 +795,8 @@ function elsayed_draw_paging($page_count = 0, $page = 1){
     if($page_count > 1){
         $return .= '<div class="pagination">
                 <div class="row">   
-                    <div class="col-md-12">
-                        <ul>';    
+                    <div class="col-md-12" style="text-align:center">
+                        <ul class="pagination_in">';    
         if($page > 1){
             $prev = $page-1;
             $class = '';
@@ -820,7 +820,7 @@ function elsayed_draw_paging($page_count = 0, $page = 1){
             $a_end = '</a>';
             if($i <= $end){                
                 if($i == $page){
-                    $class = 'pager-current';
+                    $class = 'active';
                     $a_begin = '<a title="page '.$i.'">';            
                     $a_end = '</a>';
                 }                
