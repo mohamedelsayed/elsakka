@@ -35,15 +35,15 @@ if(!empty($product)){
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-6 product_item">
+                <div class="col-md-12" style="margin-bottom: 30px;">
+                    <div class="col-md-12 product_item">
                         <img style="width: 100%;" src="<?php echo $image;?>" alt="<?php echo $product_title;?>" />                       
                     </div>
-                    <div class="col-md-6">                        
-                        <div>
+                    <div>                        
+                        <div class="col-md-12">
                             <h4><?php echo __('التصنيف:').' '.$field_category;?></h4>                        
                         </div>
-                        <div>
+                        <div class="col-md-12">
                             <h4><?php echo __('الوصف:');?></h4>
                             <?php echo $product_description;?>
                         </div>     

@@ -57,6 +57,46 @@ Header
 	border-bottom: 4px solid #d60b11;
     outline: none;
 }
+
+ul.pagination_in {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination_in li {display: inline;}
+
+ul.pagination_in li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+	color: #000000;
+}
+
+.pagination_in li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination_in li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.pagination_in li.active a {
+    background-color: #e20612;
+    color: #ffffff;
+    border: 1px solid #e20612;
+}
+
+ul.pagination_in li a:hover:not(.active) {
+	background-color: #000;color: #ffffff;
+	border: 1px solid #000;
+}
+
 .navbar {
 	margin-bottom: 0;
     min-height: inherit;
@@ -66,7 +106,6 @@ Header
 }
 .navbar-brand {
 	height: inherit;
-	
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 5px;
@@ -84,6 +123,7 @@ Header
 }
 .navbar-default .navbar-brand {
     color: #e20612;
+	width: 230px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -465,6 +505,12 @@ margin-top: 5px;
     -webkit-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
     width: 40px;
+}
+.footer_social ul li a:hover {
+    background: #e20612 none repeat scroll 0 0;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+	color: #ffffff;
 }
 .footer-bottom {
     background: #09121B;
@@ -865,6 +911,7 @@ label {
    color: #fff !important;
    padding: 0.5em 0;
    text-align: center;
+   text-decoration:none;
    margin:0;
 }
 .view_1-eighth .mask {
@@ -872,12 +919,14 @@ label {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: alpha(opacity=0);
    opacity: 0;
+   text-decoration:none;
    -webkit-transition: all 0.3s ease-out 0.5s;
    -moz-transition: all 0.3s ease-out 0.5s;
    transition: all 0.3s ease-out 0.5s;
 }
 .view_1-eighth h2 {
    -webkit-transform: translateY(-200px);
+   text-decoration:none;
    -moz-transform: translateY(-200px);
    -o-transform: translateY(-200px);
    -ms-transform: translateY(-200px);
@@ -893,6 +942,7 @@ label {
    -o-transform: translateY(-200px);
    -ms-transform: translateY(-200px);
    transform: translateY(-200px);
+   text-decoration:none;
    -webkit-transition: all 0.2s ease-in-out 0.2s;
    -moz-transition: all 0.2s ease-in-out 0.2s;
    -o-transition: all 0.2s ease-in-out 0.2s;
@@ -905,6 +955,7 @@ label {
    opacity: 1;
    top: 0px;
    -webkit-transition-delay: 0s;
+   text-decoration:none;
    -moz-transition-delay: 0s;
    transition-delay: 0s;
    -webkit-animation: bounceY 0.9s linear;
@@ -916,8 +967,10 @@ label {
 .view_1-eighth:hover h2 {
    -webkit-transform: translateY(0px);
    -moz-transform: translateY(0px);
+   text-decoration:none;
    -o-transform: translateY(0px);
    -ms-transform: translateY(0px);
+   text-decoration:none;
    transform: translateY(0px);
    -webkit-transition-delay: 0.4s;
    -moz-transition-delay: 0.4s;
@@ -927,9 +980,11 @@ label {
 }
 .view_1-eighth:hover p {
    -webkit-transform: translateY(0px);
+   text-decoration:none;
    -moz-transform: translateY(0px);
    -o-transform: translateY(0px);
    -ms-transform: translateY(0px);
+   text-decoration:none;
    transform: translateY(0px);
    -webkit-transition-delay: 0.2s;
    -moz-transition-delay: 0.2s;
@@ -1088,6 +1143,7 @@ label {
    font-family: 'Righteous-Regular';
   text-align: center;
   position: relative;
+  text-decoration:none;
   font-size: 24px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.8);
@@ -1098,6 +1154,7 @@ label {
   font-size: 14px;
   line-height: 2em;
   position: relative;
+  text-decoration:none;
   color: #fff;
   padding: 0px 20px 20px;
   text-align: center;
@@ -1111,6 +1168,16 @@ label {
     font-weight: bold;
 	text-align: center;
 }
+
+
+#product-heading h2{
+	font-size: 35px;
+	font-family: 'Droid Arabic Kufi', sans-serif !important;
+	font-weight: 900;
+	margin-right: 20px;
+	color: #e20612;
+}
+
 /*-- //gallery-page --*/
 @keyframes bounceY {
     0% { transform: translateY(-205px);}
