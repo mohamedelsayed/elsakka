@@ -718,7 +718,7 @@ function elsayed_register_new_user($name, $mail, $pass1, $pass2, $field_first_na
     $redirect = $GLOBALS['base_url'];
     drupal_goto("$redirect");            
 }
-function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1, $category_type = 2){
+function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1){
     $items = array();
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -732,16 +732,6 @@ function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1, $
     if($home != 0){
         $query->fieldCondition('field_show_in_home', 'value', $home, '=');
     }    
-    if($category == 0){
-        $categories = array();
-        if($category_type == 0 || $category_type == 1){
-            $categories_data = elsayed_get_categories_by_type($category_type);
-            $categories = array_keys($categories_data);                    
-        }
-        if(!empty($categories)){
-            $query->fieldCondition('field_category', 'target_id', $categories, 'IN');
-        }
-    }
     $result = $query->execute();
     $total_items_nids = array();
     if (isset($result['node'])) {
@@ -799,9 +789,9 @@ function elsayed_draw_paging($page_count = 0, $page = 1){
         if($page > 1){
             $prev = $page-1;
             $class = '';
-            $a_begin = '<a href="'.$actual_link.$prev.'" title="Go to page '.$prev.'">';
+            $a_begin = '<a href="'.$actual_link.$prev.'" title="'.__('إذهب إلى').' '.$prev.'">';
             $a_end = '</a>';
-            $return .= '<li class="'.$class.'">'.$a_begin.'Previous'.$a_end.'</li>';
+            $return .= '<li class="'.$class.'">'.$a_begin.__('السابق').$a_end.'</li>';
         }
         $step = 10;
         $start = $page - $step;                
@@ -815,7 +805,7 @@ function elsayed_draw_paging($page_count = 0, $page = 1){
         }
         for ($i=$start; $i <= $page_count; $i++) {
             $class = '';
-            $a_begin = '<a href="'.$actual_link.$i.'" title="Go to page '.$i.'">';            
+            $a_begin = '<a href="'.$actual_link.$i.'" title="'.__('إذهب إلى').' '.$i.'">';            
             $a_end = '</a>';
             if($i <= $end){                
                 if($i == $page){
@@ -833,7 +823,7 @@ function elsayed_draw_paging($page_count = 0, $page = 1){
             $class = '';
             $a_begin = '<a href="'.$actual_link.$next.'" title="Go to page '.$next.'">';
             $a_end = '</a>';
-            $return .= '<li class="'.$class.'">'.$a_begin.'Next'.$a_end.'</li>';
+            $return .= '<li class="'.$class.'">'.$a_begin.__('التالي').$a_end.'</li>';
         }
         $return .= '</ul>
                     </div>
@@ -1523,4 +1513,19 @@ function elsayed_redirect_user_to_admin(){
 			}
 		}		
 	}		
+}
+function elsayed_cut_string($str = '', $val = 0){
+	$return = '';
+	$str_without_tags = strip_tags($str);
+	$return = substr($str_without_tags, 0, $val);
+	/*$strArr = split(" ", $str_without_tags);
+	if(count($strArr) > $val){
+		for($index=0; $index<$val; $index++){
+			$return = $strArr[$index].' ';
+		}
+		$return .= '...';
+	}else {
+		$return = $str_without_tags;
+	}*/
+	return $return;
 }

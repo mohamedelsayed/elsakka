@@ -62,7 +62,7 @@
 			</div>
 				</div>
                 <div class="col-md-12">
-                <a class="inpt" href="#">اعرف المزيد</a>
+                <a class="inpt" href="<?php echo $base_url.'/'.'products';?>">المزيد</a>
                 </div>
 			</div>
 		</div>

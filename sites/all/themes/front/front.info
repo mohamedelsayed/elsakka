@@ -20,9 +20,10 @@ scripts[] = js/jquery.mixitup.js
 scripts[] = js/slick.min.js
 scripts[] = js/move-top.js
 scripts[] = js/custom.js
+scripts[] = js/easyResponsiveTabs.js
+scripts[] = js/jquery.swipebox.min.js
 ;scripts[] = js/contactform.js
 ;scripts[] = js/jquery.vide.min.js
-scripts[] = js/easyResponsiveTabs.js
 scripts[] = js/dev.js
 
 ; REGIONS
