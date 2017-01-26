@@ -697,7 +697,7 @@ cta
 }
 @media (min-width: 301px) and (max-width: 450px) {
 .filter {
-    padding: 3px 14px;
+    padding: 3px 25px;
     margin-bottom: 3px;
 }
 .jumbotron
@@ -727,13 +727,25 @@ cta
     padding-top: 15px;
 }
 .jumbotron h1.small {
-    font-size: 44px;
+    font-size: 20px;
+    margin-right: 15px;
 }
+.jumbotron p {
+    font-size: 14px;
+}
+#videoDiv {
+    width: 100%;
+    position: relative;
+    /* height: 600px; */
+    overflow: hidden;
 h1.cta-title {
     font-size: 30px;
 }
+h1.cta-title {
+    font-size: 25px;
+}
 p.cta-sub-title {
-    font-size: 20px;
+    font-size: 14px;
 }
 .button-medium {
     font-size: 15px;
@@ -763,7 +775,8 @@ p.cta-sub-title {
     padding: 56px 20px 20px;
 }
 .jumbotron h1.small {
-    font-size: 44px;
+    font-size: 20px;
+    margin-right: 15px;
 }
 h1.cta-title {
     font-size: 30px;
