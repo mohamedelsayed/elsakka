@@ -10,7 +10,7 @@
 	<div class="gallery">
 		<div class="container">
 			<div class="agileinfo_gallery_grids">
-				<div class="col-md-4 w3_tabs_grid">
+				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
                 	<div class="grid">
 						<a href="images/1.mp4" class="lsb-preview" data-lsb-group="header">
 							<figure class="effect-winston">
@@ -47,7 +47,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-4 w3_tabs_grid">
+				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
 					<div class="grid">
 						<a href="images/17.jpg" class="lsb-preview" data-lsb-group="header">
 							<figure class="effect-winston">
@@ -56,7 +56,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-4 w3_tabs_grid">
+				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
 					<div class="grid">
 						<a href="images/16.jpg" class="lsb-preview" data-lsb-group="header">
 							<figure class="effect-winston">
