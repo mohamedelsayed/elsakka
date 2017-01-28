@@ -117,6 +117,15 @@ ul.pagination_in li a:hover:not(.active) {
 }
 .view_1 h4 {
     color: #fff;
+	text-decoration: none;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+	padding: 4em 0;
+}
+.view_1 h4:hover {
+    color: #fff;
+	text-decoration: none !important;
     text-align: center;
     position: relative;
     font-size: 2em;
@@ -127,6 +136,7 @@ ul.pagination_in li a:hover:not(.active) {
    position: relative;
    color: #fff !important;
    padding: 0.5em 0;
+   text-decoration: none;
    text-align: center;
    text-decoration:none;
    margin:0;
@@ -210,6 +220,7 @@ ul.pagination_in li a:hover:not(.active) {
    -ms-transition-delay: 0.2s;
    transition-delay: 0.2s;
 }
+
 
 #product-heading h2{
 	font-size: 35px;
@@ -393,6 +404,7 @@ ul.pagination_in li a:hover:not(.active) {
    -ms-transform: translateY(0px) rotate(0deg);
    transform: translateY(0px) rotate(0deg);
    -webkit-transition-delay: 0.4s;
+   text-decoration:none;
    -moz-transition-delay: 0.4s;
    -o-transition-delay: 0.4s;
    -ms-transition-delay: 0.4s;
@@ -404,6 +416,7 @@ ul.pagination_in li a:hover:not(.active) {
    -o-transform: translateY(0px);
    -ms-transform: translateY(0px);
    transform: translateY(0px);
+   text-decoration:none;
    -webkit-transition-delay: 0.7s;
    -moz-transition-delay: 0.7s;
    -o-transition-delay: 0.7s;
@@ -416,7 +429,7 @@ ul.pagination_in li a:hover:not(.active) {
    -o-transform: translateY(0px);
    -ms-transform: translateY(0px);
    transform: translateY(0px);
-
+	text-decoration:none;
    -webkit-transition-delay: 0.6s;
    -moz-transition-delay: 0.6s;
    -o-transition-delay: 0.6s;
@@ -431,6 +444,7 @@ ul.pagination_in li a:hover:not(.active) {
    transform: translateY(0px);
    -webkit-transition-delay: 0.5s;
    -moz-transition-delay: 0.5s;
+   text-decoration:none;
    -o-transition-delay: 0.5s;
    -ms-transition-delay: 0.5s;
    transition-delay: 0.5s;
@@ -438,7 +452,17 @@ ul.pagination_in li a:hover:not(.active) {
 .view h4 {
   text-transform: uppercase;
   color: #ffffff;
-   font-family: 'Righteous-Regular';
+  text-align: center;
+  position: relative;
+  text-decoration:none;
+  font-size: 24px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 33px 0 25px 0;
+}
+.view h4:hover {
+  text-transform: uppercase;
+  color: #ffffff;
   text-align: center;
   position: relative;
   text-decoration:none;
