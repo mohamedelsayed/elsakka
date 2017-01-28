@@ -5,7 +5,7 @@
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */?>
 <?php global $base_url;?>    
-<?php include_once 'header.php';?>
+<?php include_once 'common'.DS.'header.php';?>
 <div class="container" style="width: 100%;margin: auto;min-height: 450px;">
     <div class="custom_access_denied" style="width: 200px;margin-right: auto; margin-left: auto;margin-top: 30px;">
         <img style="width: 100%;max-height: 100%;margin-right: auto; margin-left: auto;" class="" src="<?php echo $GLOBALS['base_url'].'/'.path_to_theme();?>/img/logo-accessdenied.jpg" />
@@ -16,4 +16,4 @@
 		echo $form;?>
 	</div>
 </div>
-<?php include_once 'footer.php';?>
+<?php include_once 'common'.DS.'footer.php';?>

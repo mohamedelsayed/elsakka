@@ -4,7 +4,7 @@
  * @link http://www.mohamedelsayed.net
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */?>
-<?php include_once 'header.php';?>
+<?php include_once 'common'.DS.'header.php';?>
 <div class="container" style="width: 100%;margin: auto;">
     <div style="width: 70%;;margin-right: auto; margin-left: auto;">
         <a href="<?php echo $GLOBALS['base_url'];?>" style="cursor: pointer;">
@@ -12,4 +12,4 @@
         </a>
     </div>
 </div>
-<?php include_once 'footer.php';?>
+<?php include_once 'common'.DS.'footer.php';?>
