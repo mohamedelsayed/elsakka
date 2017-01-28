@@ -10,6 +10,7 @@
 	<div class="gallery">
 		<div class="container">
 			<div class="agileinfo_gallery_grids">
+                       <h3 class="tittle">مكتبة الفديو </h3>
 				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
                 	<div class="grid">
 						<a href="images/1.mp4" class="lsb-preview" data-lsb-group="header">
@@ -58,7 +59,7 @@
 				</div>
 				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
 					<div class="grid">
-						<a href="images/16.jpg" class="lsb-preview" data-lsb-group="header">
+						<a href="<?php echo $base_url.'/'.path_to_theme();?>/img/6.jpg" class="lsb-preview" data-lsb-group="header">
 							<figure class="effect-winston">
 								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/6.jpg" class="img-responsive" alt=" " />		
 							</figure>
@@ -67,10 +68,9 @@
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<script src="js/lsb.min.js"></script>
 			<script>
-			$(window).load(function() {
-				  $.fn.lightspeedBox();
+			jQuery(window).load(function() {
+				  jQuery.fn.lightspeedBox();
 				});
 			</script>
 		</div>
