@@ -6,18 +6,22 @@
  */?>
 <?php global $base_url;?>    
 <?php include_once 'common'.DS.'header.php';?>
+<?php $arg1 = arg(1);
+ if(is_numeric($arg1)){
+    $category = $arg1;
+}else{
+    $category = 0;
+}
+$page_title = __('المنتجات');
+if($category > 0){
+	$category_data = node_load($category);
+	$category_title = $category_data->title;
+	$page_title = $category_title;	
+}?>
 <div class="facilities">
 	<div class="container">
-		<h3 class="tittle"><?php echo __('المنتجات');?></h3> 			
-		<?php $arg1 = arg(1);
-		 if(is_numeric($arg1)){
-            $category = $arg1;
-        }else{
-            $category = 0;
-        }      
-        $home = 0;
-        $limit = 3;
-        $page = 1;
+		<h3 class="tittle"><?php echo $page_title;?></h3> 			
+		<?php $home = 0;$limit = 3;$page = 1;
         if(isset($_GET['page'])){
             $page = $_GET['page'];
         }

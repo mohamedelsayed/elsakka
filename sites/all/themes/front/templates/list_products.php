@@ -3,8 +3,8 @@
         $product_title = $product->title;
         $product_url = elsayed_get_node_url_by_id($product->nid);
         $product_description = '';
-        if(isset($product->body[LANGUAGE_NONE][0]['safe_value'])){
-            $product_description = elsayed_cut_string($product->body[LANGUAGE_NONE][0]['safe_value'], 250);
+        if(isset($product->body[LANGUAGE_NONE][0]['value'])){
+            $product_description = elsayed_cut_string($product->body[LANGUAGE_NONE][0]['value'], 250);
         }
         $image = $GLOBALS['default_image'];
         if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
