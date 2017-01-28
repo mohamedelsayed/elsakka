@@ -19,7 +19,6 @@
 		<?php }?>
 		<?php $category = 0;$home = 1;$limit = 6;$page = 1;
         $return = elsayed_get_products($category, $home, $limit, $page);
-        //$page_count = $return['page_count'];
         $products = $return['items'];?>
 		<div class="port-sec">			
 			<?php $categories = array();
@@ -77,7 +76,7 @@
 			$html1 .= '</div>';
 			echo $html1.$html2;?>
             <div class="col-md-12">
-            	<a class="inpt" href="<?php echo $base_url.'/'.'products';?>">المزيد</a>
+            	<a class="inpt" href="<?php echo $base_url.'/'.'products';?>"><?php echo __('المزيد');?></a>
             </div>			
 		</div>
 	</div>

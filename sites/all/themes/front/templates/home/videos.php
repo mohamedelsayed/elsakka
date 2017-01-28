@@ -1,9 +1,22 @@
 <div id="service" class="section-padding">
 	<div class="container">
-    <div class="row text-center white">
-				<h1>مكتبة الفيديو</h1>
-                <hr class="pg-titl-bdr-btm">
+		<?php if(isset($home_widgets['videos']) && !empty($home_widgets['videos'])){
+			$item = $home_widgets['videos'];
+			$title = '';$body = '';
+			if(isset($item->title)){
+				$title = $item->title;
+			}	
+			if(isset($item->body[LANGUAGE_NONE][0]['value'])){
+				$body = $item->body[LANGUAGE_NONE][0]['value'];
+			}?>
+			<div class="row">
+				<div class="page-title text-center">
+					<h1><?php echo $title;?></h1>
+					<p><?php echo $body;?></p>
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
 			</div>
+		<?php }?>
 		<div class="content-bottom">
 			<script type="text/javascript">
 				jQuery(document).ready(function () {

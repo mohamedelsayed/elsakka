@@ -37,21 +37,18 @@ if(!empty($product)){
                     <div id="product-heading" style="padding: 0px;margin-bottom: 30px;">
                         <h2><?php echo $product_title;?></h2>
                     </div>
+                    <div class="col-md-12">
+                        <h4><?php echo __('التصنيف:').' <a '.$category_url.' >'.$field_category.'</a>';?></h4>                        
+                    </div>
+                    <div class="col-md-12">
+                        <?php echo $product_description;?>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12" style="margin-bottom: 30px;">
                     <div class="col-md-12 product_item">
                         <img style="width: 100%;" src="<?php echo $image;?>" alt="<?php echo $product_title;?>" />                       
-                    </div>
-                    <div>                        
-                        <div class="col-md-12">
-                            <h4><?php echo __('التصنيف:').' <a '.$category_url.' >'.$field_category.'</a>';?></h4>                        
-                        </div>
-                        <div class="col-md-12">
-                            <h4><?php echo __('الوصف:');?></h4>
-                            <?php echo $product_description;?>
-                        </div>     
                     </div>
                 </div>            
             </div>

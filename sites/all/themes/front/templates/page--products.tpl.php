@@ -17,7 +17,8 @@ if($category > 0){
 	$category_data = node_load($category);
 	$category_title = $category_data->title;
 	$page_title = $category_title;	
-}?>
+}
+drupal_set_title($page_title);?>
 <div class="facilities">
 	<div class="container">
 		<h3 class="tittle"><?php echo $page_title;?></h3> 			
