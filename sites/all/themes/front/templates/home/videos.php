@@ -49,7 +49,7 @@
 						<?php }?>
 						<div class="clear"></div>
 		  			</ul>		
-		  			<div class="resp-tabs-container">
+		  			<div class="resp-tabs-container" >
 		  				<?php $i = 0;
 		   				foreach ($videos as $key => $video) {
 		   					$video_title = $video->title;
@@ -65,10 +65,10 @@
 							if(isset($video->field_video_file[LANGUAGE_NONE][0]['uri'])){
 								$video_file = file_create_url($video->field_video_file[LANGUAGE_NONE][0]['uri']);
 							}?>
-			  				<div class="tab-<?php echo $i++;?> resp-tab-content" aria-labelledby="tab_item-<?php echo $i++;?>">
-			  					<div class="facts">
+			  				<div class="tab-<?php echo $i++;?> resp-tab-content" aria-labelledby="tab_item-<?php echo $i++;?>" style="">
+			  					<div class="facts" style="">
 			  						<?php if($video_file != ''){?>
-			  							<video width="100%" height="100%" controls>
+			  							<video style="object-fit: fill;min-height: 532px;" width="100%" height="100%" controls>
 											<source src="<?php echo $video_file;?>" type="video/mp4"></source>
 										</video>	
 									<?php }elseif($youtube_link != ''){
