@@ -11,68 +11,60 @@
 		<div class="container">
 			<div class="agileinfo_gallery_grids">
                        <h3 class="tittle">مكتبة الفديو </h3>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-                	<div class="grid">
-						<a href="images/1.mp4" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/16.jpg" class="img-responsive" alt=" " />
-							</figure>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-					<div class="grid">
-						<a href="images/13.jpg" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/17.jpg" class="img-responsive" alt=" " />			
-							</figure>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-					<div class="grid">
-						<a href="images/14.jpg" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/18.jpg" class="img-responsive" alt=" " />
-										
-							</figure>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-					<div class="grid">
-						<a href="images/15.jpg" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/3.jpg" class="img-responsive" alt=" " />			
-							</figure>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-					<div class="grid">
-						<a href="images/17.jpg" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/5.jpg" class="img-responsive" alt=" " />		
-							</figure>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4 w3_tabs_grid w3_tabs_grid_sub">
-					<div class="grid">
-						<a href="<?php echo $base_url.'/'.path_to_theme();?>/img/6.jpg" class="lsb-preview" data-lsb-group="header">
-							<figure class="effect-winston">
-								<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/6.jpg" class="img-responsive" alt=" " />		
-							</figure>
-						</a>
-					</div>
-				</div>
+                       <div id="myBtn" class="view_1 view_1-eighth filimg col-md-4 col-sm-4 col-xs-12" data-myorder="2">
+						<a  href="#'">
+				    		<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/16.jpg" class="img-responsive" alt=" " />
+			    		</a>
+			    		<div class="mask">
+			    			<a title="" href="#">
+			    				<h4>منتج</h4>
+			    			</a>
+		    			</div>
+                        <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                    
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Some text in the Modal..</p>
+                      </div>
+                    
+                    </div>
+	    			</div>
+				
+                   
+				
+				
+				
 				<div class="clearfix"> </div>
 			</div>
 			<script>
-			jQuery(window).load(function() {
-				  jQuery.fn.lightspeedBox();
-				});
-			</script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 		</div>
 	</div>
 </div>
