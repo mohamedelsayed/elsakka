@@ -4,7 +4,7 @@
  * @link http://www.mohamedelsayed.net
  * @copyright Copyright (c) 2015 Programming by "http://www.mohamedelsayed.net"
  */?>
-<?php include_once 'header.php';?>
+<?php include_once 'common'.DS.'header.php';?>
 <div id="page">
     <div class="container">
         <div class="row">
@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<?php include_once 'footer.php';?>
+<?php include_once 'common'.DS.'footer.php';?>
 <style type="text/css">
     .content{
         display: block;
