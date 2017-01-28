@@ -382,11 +382,15 @@ function elsayed_form_alter(&$form, &$form_state, $form_id){
 		$info = field_info_field('field_identifier');
 		$values = &$info['settings']['allowed_values'];
 		if(!isset($values['products'])){
-			$values['products'] = 'products';
+			$values['products'] = 'Products';
 			field_update_field($info);
 		}
 		if(!isset($values['home_video'])){
-			$values['home_video'] = 'Home Video';
+			$values['home_video'] = 'Top Home Video';
+			field_update_field($info);
+		}
+		if(!isset($values['videos'])){
+			$values['videos'] = 'Videos';
 			field_update_field($info);
 		}
 		$arg1 = arg(1);
@@ -395,6 +399,9 @@ function elsayed_form_alter(&$form, &$form_state, $form_id){
 		}else{
 			$form['field_video_file']['#access'] = 0;
 		}
+	}
+	if ($form_id == 'video_node_form') {
+		$form['#validate'][] = 'elsayed_video_node_form_form_validation';
 	}
 }
 function elsayed_form_node_delete_confirm_alter(&$form, $form_state) {
@@ -1539,4 +1546,48 @@ function elsayed_cut_string($str = '', $val = 0){
 		$return = $str_without_tags;
 	}*/
 	return $return;
+}
+function elsayed_get_videos($category = 0, $home = 0, $limit = 0, $page = 1){
+    $items = array();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'video')
+            ->propertyCondition('status', 1)
+            ->propertyOrderBy('created', 'DESC');
+    $query->addMetaData('account', user_load(1)); 
+    if($category != 0){
+        //$query->fieldCondition('field_category', 'target_id', $category, '=');
+    }
+    if($home != 0){
+        $query->fieldCondition('field_show_in_home', 'value', $home, '=');
+    }    
+    $result = $query->execute();
+    $total_items_nids = array();
+    if (isset($result['node'])) {
+        $total_items_nids = array_keys($result['node']);
+    }
+    $return = array();
+    if($limit != 0) {
+        $start = ($page - 1) * $limit;       
+        $total_count = count($total_items_nids);
+        $items_nids = array_slice($total_items_nids, $start, $limit);
+        $items = entity_load('node', $items_nids);
+        $return['page_count'] = ceil($total_count / $limit);
+        $return['items'] = $items;
+    }else{
+        $items = entity_load('node', $total_items_nids);        
+        $return = $items;
+    }
+    return $return;  
+}
+function elsayed_video_node_form_form_validation($form, &$form_state){
+	$field_youtube_link = '';
+	if(isset($form_state['values']['field_youtube_link'][LANGUAGE_NONE][0]['value'])){
+		$field_youtube_link = $form_state['values']['field_youtube_link'][LANGUAGE_NONE][0]['value'];
+	}
+	if(trim($field_youtube_link) != ''){
+		if (!(strpos($field_youtube_link, 'youtube') > 0)) {
+			form_set_error('field_youtube_link', __('Please enter valid Youtube link.'));
+		}
+	}	
 }
