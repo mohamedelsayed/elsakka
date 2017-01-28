@@ -4,7 +4,7 @@
  * @link http://www.mohamedelsayed.net
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */?>
-<?php include_once 'header.php';?>
+<?php include_once 'common'.DS.'header.php';?>
 <?php $nid = arg(1);
 $product = node_load($nid);
 if(!empty($product)){
@@ -21,9 +21,14 @@ if(!empty($product)){
         $default_image = image_style_url('default_size', $product->field_image[LANGUAGE_NONE][0]['uri']);
     }
     $field_category = '';
+	$category_url = '';
     if(isset($product->field_category[LANGUAGE_NONE][0]['target_id'])){
         $category = node_load($product->field_category[LANGUAGE_NONE][0]['target_id']);
-        $field_category = $category->title;
+        if(!empty($category)){
+        	$field_category = $category->title;
+			$category_nid = $category->nid;
+			$category_url = ' href="'.$base_url.'/'.'products/'.$category_nid.'" ';
+		}
     }?>
     <div id="product-post">
         <div class="container">
@@ -41,7 +46,7 @@ if(!empty($product)){
                     </div>
                     <div>                        
                         <div class="col-md-12">
-                            <h4><?php echo __('التصنيف:').' '.$field_category;?></h4>                        
+                            <h4><?php echo __('التصنيف:').' <a '.$category_url.' >'.$field_category.'</a>';?></h4>                        
                         </div>
                         <div class="col-md-12">
                             <h4><?php echo __('الوصف:');?></h4>
@@ -53,4 +58,4 @@ if(!empty($product)){
         </div>
     </div>
 <?php }?>
-<?php include_once 'footer.php';?>
+<?php include_once 'common'.DS.'footer.php';?>

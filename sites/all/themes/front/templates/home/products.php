@@ -17,54 +17,68 @@
 				</div>
 			</div>
 		<?php }?>
-		<div class="port-sec">
-			<div class="col-md-12 fil-btn text-center">
-				<div class="filter wrk-title active" data-filter="all">الكل</div>
-				<div class="filter wrk-title" data-filter=".category-1">منتج</div>
-				<div class="filter wrk-title" data-filter=".category-2">منتج</div>
-				<div class="filter wrk-title lst-cld" data-filter=".category-3">منتج</div>
-			</div>
-			<div id="Container">
-				<div class="view_1 view_1-eighth filimg mix category-1 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="2">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea1.jpg" class="img-responsive"></a> 
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>
-				</div>
-				<div class="view_1 view_1-eighth filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="4">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive"></a>
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>
-				</div>
-				<div class="view_1 view_1-eighth filimg mix category-1 col-md-4 col-sm-4 col-xs-12" data-myorder="1">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea3.jpg" class="img-responsive"></a>
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>								
-				</div>
-				<div class="view_1 view_1-eighth filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea4.jpg" class="img-responsive"></a>
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>								
-				</div>
-				<div class="view_1 view_1-eighth filimg mix category-2 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea5.jpg" class="img-responsive"></a>
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>
-				</div>
-				<div class="view_1 view_1-eighth filimg mix category-2 category-3 col-md-4 col-sm-4 col-xs-12" data-myorder="8">
-					<a href="#"><img src="<?php echo $base_url.'/'.path_to_theme();?>/img/fea2.jpg" class="img-responsive"></a>
-                    <div class="mask">
-				<a href="#"><h4>اضغط هنا</h4></a>
-			</div>
-				</div>
-                <div class="col-md-12">
-                <a class="inpt" href="<?php echo $base_url.'/'.'products';?>">المزيد</a>
-                </div>
-			</div>
+		<?php $category = 0;$home = 1;$limit = 6;$page = 1;
+        $return = elsayed_get_products($category, $home, $limit, $page);
+        //$page_count = $return['page_count'];
+        $products = $return['items'];?>
+		<div class="port-sec">			
+			<?php $categories = array();
+			$html2 = '';
+			if(!empty($products)){
+				$html2 .= '<div id="Container">';
+				foreach ($products as $key => $product) {
+					$product_title = $product->title;
+			        $product_url = elsayed_get_node_url_by_id($product->nid);
+			        $product_description = '';
+			        if(isset($product->body[LANGUAGE_NONE][0]['value'])){
+			            $product_description = elsayed_cut_string($product->body[LANGUAGE_NONE][0]['value'], 250);
+			        }
+			        $image = $GLOBALS['default_image'];
+			        if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
+			            $image = image_style_url('thumbnail', $product->field_image[LANGUAGE_NONE][0]['uri']);
+			        }
+					$field_category = '';
+					$category_nid = 0;
+				    if(isset($product->field_category[LANGUAGE_NONE][0]['target_id'])){
+				        $category = node_load($product->field_category[LANGUAGE_NONE][0]['target_id']);
+				        if(!empty($category)){
+				        	$field_category = $category->title;
+							$category_nid = $category->nid;
+							$categories[$category_nid] = $category->title;
+						}
+				    }
+					$html2 .= '<div class="view_1 view_1-eighth filimg mix category-1 category-'.$category_nid.' col-md-4 col-sm-4 col-xs-12" data-myorder="2">
+						<a href="'.$product_url.'">
+				    		<img src="'.$image.'" class="img-responsive">
+			    		</a>
+			    		<div class="mask">
+			    			<a title="'.$product_title.'" href="'.$product_url.'">
+			    				<h4>'.$product_title.'</h4>
+			    			</a>
+		    			</div>
+	    			</div>';
+				}		
+				$html2 .= '</div>';
+			}
+			$html1 = '';
+			$html1 .= '<div class="col-md-12 fil-btn text-center">
+			<div class="filter wrk-title active" data-filter="all">'.__('الكل').'</div>';
+			if(!empty($categories)){
+				$count = count($categories);
+				$i = 1;
+				foreach ($categories as $key => $category) {
+					$additional_class = '';
+					if($i++ >= $count){
+						$additional_class = ' lst-cld';							
+					}
+					$html1 .= '<div class="filter wrk-title '.$additional_class.'" data-filter=".category-'.$key.'">'.$category.'</div>';						
+				}					
+			}
+			$html1 .= '</div>';
+			echo $html1.$html2;?>
+            <div class="col-md-12">
+            	<a class="inpt" href="<?php echo $base_url.'/'.'products';?>">المزيد</a>
+            </div>			
 		</div>
 	</div>
 </div>
