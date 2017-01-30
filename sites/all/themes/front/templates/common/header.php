@@ -27,6 +27,7 @@ if($is_front_page){
 		$menu_class4 = $active_class;		
 	}
 }?>   
+<header>
 <div class="center-container">
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -65,3 +66,4 @@ if($is_front_page){
 		</div>
 	</nav>
 </div>
+</header>
