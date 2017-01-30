@@ -17,8 +17,7 @@
 				</div>
 			<?php }?>
             <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            
+            <div id="errormessage"></div>            
 			<div class="form-sec">
             	<form action="" method="post" role="form" class="contactForm">
                 	<div class="col-md-4 form-group">
@@ -35,8 +34,7 @@
                     </div>
                     <div class="col-md-12 form-group">
                         <textarea class="form-control text-field-box" name="message" rows="5" data-rule="required" data-msg="الرسالة" placeholder="الرسالة"></textarea>
-                        <div class="validation"></div>
-        
+                        <div class="validation"></div>        
                         <button class="button-medium" id="contact-submit" type="submit" name="contact">ارسال</button>
                     </div>
                 </form>

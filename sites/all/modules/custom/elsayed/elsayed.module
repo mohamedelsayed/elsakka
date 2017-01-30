@@ -712,8 +712,8 @@ function elsayed_register_new_user($name, $mail, $pass1, $pass2, $field_first_na
         <p><a href="'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'">'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'</a></p>
         Thank you for your understanding, and we look forward to seeing you on '.variable_get('site_name').'.';
         */
-        /*$message = get_shift_languages_string('Thank you for registering at', $sitelang).' '.variable_get('site_name').'.'.get_shift_languages_string('Your username is', $sitelang).': '.$account->name.'<p>'.get_shift_languages_string('To protect our serious users from unwanted registrations, it is important that you validate your registration', $sitelang).' '.get_shift_languages_string('by visiting the following URL', $sitelang).': </p>
-        <p><a href="'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'">'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'</a></p>'.get_shift_languages_string('Thank you for your understanding, and we look forward to seeing you on', $sitelang).' '.variable_get('site_name').'.';
+        /*$message = __('Thank you for registering at', $sitelang).' '.variable_get('site_name').'.'.__('Your username is', $sitelang).': '.$account->name.'<p>'.__('To protect our serious users from unwanted registrations, it is important that you validate your registration', $sitelang).' '.__('by visiting the following URL', $sitelang).': </p>
+        <p><a href="'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'">'.$GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token.'</a></p>'.__('Thank you for your understanding, and we look forward to seeing you on', $sitelang).' '.variable_get('site_name').'.';
 
         $base_url = $GLOBALS['base_url'].'/'.path_to_theme();
         $url_message = $GLOBALS['base_url'].'/verifyuser/'.$account->uid.'/'.$token ;
@@ -1478,23 +1478,24 @@ function elsayed_custom_setting_form($form, &$form_state) {
         '#type' => 'textfield',
         '#required' => false,
         '#default_value' => variable_get('google_analytics_propertyid', ''),
+    );
+	$form['contact_mail'] = array(
+        '#title' => __('Contact Email'),
+        '#discription' => __(''),
+        '#type' => 'textfield',
+        '#required' => false,
+        '#default_value' => variable_get('contact_mail', ''),
     );	
     $form['#validate'][] = 'elsayed_custom_setting_form_validation';
     return system_settings_form($form);
 }
 function elsayed_custom_setting_form_validation($form, &$form_state) { 
-    /*$questions = $form_state['values']['qbank_num_questions'];
-    if (!is_numeric($questions)) {
-        form_set_error('qbank_num_questions', get_shift_languages_string('Number of questions must be numeric'));
-    } elseif ($questions <= 0) {
-        form_set_error('qbank_num_questions', get_shift_languages_string('Number of questions must be greater than 0'));
-    }
-    $days = $form_state['values']['qbank_question_days'];
-    if (!is_numeric($days)) {
-        form_set_error('qbank_question_days', get_shift_languages_string('Number of Days must be numeric'));
-    } elseif ($days <= 0) {
-        form_set_error('qbank_question_days', get_shift_languages_string('Number of Days must be greater than 0'));
-    }*/
+    $contact_mail = $form_state['values']['contact_mail'];
+	if(trim($contact_mail) != ''){
+		if (filter_var($contact_mail, FILTER_VALIDATE_EMAIL) === false) {
+			form_set_error('contact_mail', __('Email must be valid.'));
+		}
+	}    
 }
 function elsayed_get_home_widgets(){
     $start = 0;

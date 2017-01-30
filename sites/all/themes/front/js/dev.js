@@ -4,11 +4,11 @@
  * @link http://www.mohamedelsayed.net
  * @copyright Copyright (c) 2016 Programming by "http://www.mohamedelsayed.net"
  */
-/*jQuery(document).ready(function(){
+jQuery(document).ready(function(){
 	jQuery("form#contact-form").submit(function(e){
 		e.preventDefault();
 	});
-	jQuery("form.addToCart").submit(function(e){
+	/*jQuery("form.addToCart").submit(function(e){
 		e.preventDefault();
 	});
 	jQuery('.sign-in').click(function(){ 
@@ -34,7 +34,7 @@
 		e.preventDefault();
 		var key = jQuery("#search_key").val();
 		window.location.href = base_url+'/search-results/'+key;
-	});
+	});*/
 });
 // contactus form functions
 function isValidEmailAddress(emailAddress){
@@ -72,7 +72,7 @@ function validate_contact_us_form(){
 		jQuery("#phone").addClass("required");
 	}else{
 		jQuery("#phone").removeClass("required");
-	}/
+	}*/
 	if(error.length !== 0){                         
 	}else{  
 		jQuery.ajax({
@@ -92,8 +92,38 @@ function validate_contact_us_form(){
 		});             
 	}   
 }
+function validate_required_input(obj){
+	var val = obj.val();
+	if (jQuery.trim(val).length !== 0){
+		if(obj.hasClass('required')){
+			obj.removeClass("required");			
+		}
+	}else{
+		if(!(obj.hasClass('required'))){
+			obj.addClass("required");			
+		}			
+	}
+}
+function isNumeric(n) {
+	return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function init() {
+    window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 70,
+            header = document.querySelector("header");
+        if (distanceY > shrinkOn) {
+            classie.add(header,"smaller");
+        } else {
+            if (classie.has(header,"smaller")) {
+                classie.remove(header,"smaller");
+            }
+        }
+    });
+}
+window.onload = init();
 // sign in & sign up & forget password functions
-function addValidationRegister(){
+/*function addValidationRegister(){
 	var myform = jQuery('#ajaxuserregisterform');
 	var formData = jQuery(myform).serialize();
 	var flag = false;
@@ -198,23 +228,8 @@ function refresh_cart_info_text(){
         	jQuery('#cart_info_widget').html(result.responseText);
         }
 	});  
-}
-function validate_required_input(obj){
-	var val = obj.val();
-	if (jQuery.trim(val).length !== 0){
-		if(obj.hasClass('required')){
-			obj.removeClass("required");			
-		}
-	}else{
-		if(!(obj.hasClass('required'))){
-			obj.addClass("required");			
-		}			
-	}
-}
-function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
-function validate_custom_checkout_form(){
+}*/
+/*function validate_custom_checkout_form(){
 	var custom_course_form_error = 0;
 	var focused = 0;	
 	jQuery("#paypal_form input.required_input").each(function(){

@@ -34,26 +34,14 @@ $base_url_with_lang = elsayed_get_base_url_with_lang();?>
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php print $styles;?>
-        <?php print $scripts;?> 
-<script>
-    function init() {
-        window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 70,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-            } else {
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
-    }
-    window.onload = init();
-</script>       
+        <?php print $scripts;?>       
     </head>    
-    <body class="<?php print $classes;?>" <?php print $attributes; ?>>       
+    <?php $additional_body_classes = '';
+    $is_admin = elsayed_is_user_admin();
+	if($is_admin){
+		$additional_body_classes .= ' admin_user ';
+	}?>
+    <body class="<?php print $classes.$additional_body_classes;?>" <?php print $attributes; ?>>       
         <?php print $page_top; ?>
         <?php print $page; ?>
         <?php print $page_bottom;?>          
