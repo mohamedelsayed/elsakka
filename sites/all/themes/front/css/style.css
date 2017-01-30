@@ -145,6 +145,33 @@ ul.pagination_in li a:hover:not(.active) {
    text-decoration:none;
    margin:0;
 }
+.title_product{
+    color: #fff;
+	text-decoration: none;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+	padding: 60px 0 0 0 !important;
+}
+.title_product:hover {
+    color: #fff;
+	text-decoration: none !important;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+	padding: 60px 0 0 0 !important;
+}
+.product_p{
+   font-size: 1em;
+   position: relative;
+   color: #fff !important;
+   padding: 0.5em 0;
+   line-height: 23px;
+   text-decoration: none;
+   text-align: center;
+   text-decoration:none;
+   margin:0;
+}
 .view_1-eighth .mask {
    background-color:rgba(0, 0, 0, 0.67);
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
