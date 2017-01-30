@@ -7,6 +7,9 @@ link & button
 body{
 	direction: rtl;
 	font-family: 'Droid Arabic Kufi', sans-serif !important;
+	-webkit-transition: all 0.2s ease-in-out 0.1s;
+   -moz-transition: all 0.2s ease-in-out 0.1s;
+   transition: all 0.2s ease-in-out 0.1s;
 }
 .white
 {
@@ -25,6 +28,9 @@ h1
     font-weight: bold;
 	color: #e20612;
 	margin: 0;
+}
+.admin_user‏{
+	margin-bottom: 20px;
 }
 /**************************************
 Header
@@ -496,6 +502,9 @@ header {
 	text-decoration:none;
 	background: #000;
 	color: #ffffff;
+}
+.admin_user‏ .center-container{
+	margin-top: 24px !important;
 }
 /*-- gallery-page --*/
 .view {
