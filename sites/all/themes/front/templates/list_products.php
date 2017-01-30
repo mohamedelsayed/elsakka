@@ -10,13 +10,13 @@
         if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
             $image = image_style_url('thumbnail', $product->field_image[LANGUAGE_NONE][0]['uri']);
         }?>        
-        <div class="view view-seventh">
+        <div class="view_1 view_1-eighth filimg col-md-4 col-sm-4 col-xs-12">
             <a class="b-link-stripe b-animate-go swipebox"  title="<?php echo $product_title;?>">
             	<img src="<?php echo $image;?>" alt="<?php echo $product_title;?>" class="img-responsive">
 				<div class="mask">
 					<a href="<?php echo $product_url;?>" title="<?php echo $product_title;?>">
-						<h4><?php echo $product_title;?></h4>
-						<p><?php echo $product_description;?></p>
+						<h4 class="title_product"><?php echo $product_title;?></h4>
+						<p class="product_p"><?php echo $product_description;?></p>
 					</a>
 				</div>
             </a>
