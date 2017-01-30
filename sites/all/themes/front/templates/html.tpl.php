@@ -39,7 +39,7 @@ $base_url_with_lang = elsayed_get_base_url_with_lang();?>
     <?php $additional_body_classes = '';
     $is_admin = elsayed_is_user_admin();
 	if($is_admin){
-		$additional_body_classes .= ' admin_user ';
+		//$additional_body_classes .= ' admin ';
 	}?>
     <body class="<?php print $classes.$additional_body_classes;?>" <?php print $attributes; ?>>       
         <?php print $page_top; ?>
