@@ -24,13 +24,14 @@ h1
 	font-size: 40px;
     font-weight: bold;
 	color: #e20612;
+	margin: 0;
 }
 /**************************************
 Header
 **************************************/
 .section-padding
 {
-	padding: 20px 0px;
+	padding: 70px 0px 20px;
 }
 .center-container{
 	height: 100px;
@@ -74,6 +75,9 @@ ul.pagination_in li a {
     transition: background-color .3s;
     border: 1px solid #ddd;
 	color: #000000;
+}
+.resp-tabs-container{
+	margin-bottom: 25px ;
 }
 
 .pagination_in li:first-child a {
@@ -222,6 +226,118 @@ ul.pagination_in li a:hover:not(.active) {
 }
 
 
+/* =Header
+-------------------------------------------------------------- */
+header {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s; }
+  header h1#logo {
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  header nav {
+    display: inline-block;
+}
+    header nav a {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      header nav a:hover {
+        color: white; }
+  header.smaller {
+    height: 65px;
+	margin-bottom: 100px;
+	border-bottom: 2px solid #CCC;
+	 }
+    header.smaller .logo {
+      height: 56px;
+	  width: 80%;
+     }
+	 header.smaller .logo2 {
+      height: 56px;
+	  width: 80%;
+     }
+    header.smaller .navbar-nav {
+    padding-top: 20px;
+}
+ header.smaller .section-padding {
+    padding-top: 100px;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+/* =Extras
+-------------------------------------------------------------- */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0; }
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 660px) {
+  /* =Header
+  -------------------------------------------------------------- */
+  header h1#logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 100px;
+    text-align: center; }
+  header nav {
+    display: block;
+    float: none;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto; }
+    header nav a {
+      line-height: 50px;
+      margin: 0 10px; }
+  header.smaller {
+    height: 75px; }
+    header.smaller h1#logo {
+      height: 40px;
+      line-height: 40px;
+      font-size: 30px; }
+    header.smaller nav {
+      height: 35px; }
+      header.smaller nav a {
+        line-height: 35px; } }
+@media all and (max-width: 600px) {
+  .container {
+    width: 100%; }
+
+  #info-bar a {
+    display: block; }
+  #info-bar span.all-tutorials,
+  #info-bar span.back-to-tutorial {
+    width: 100%; }
+  #info-bar span.all-tutorials,
+  #info-bar span.back-to-tutorial {
+    float: none;
+    text-align: center; }
+  #info-bar span.all-tutorials {
+    border-bottom: solid 1px #0793e2; } }
+
+
+
 #product-heading h2{
 	font-size: 35px;
 	font-family: 'Droid Arabic Kufi', sans-serif !important;
@@ -232,7 +348,6 @@ ul.pagination_in li a:hover:not(.active) {
 .navbar {
 	margin-bottom: 0;
     min-height: inherit;
-    position: fixed;
     width: 100%;
 	z-index: 10;
 }
@@ -651,6 +766,15 @@ a.btn-banner:hover, a.btn-banner:focus
     text-decoration: none;
     cursor: pointer;
 }
+#product-heading a {
+	color: #333;
+	font-size:18px;
+}
+#product-heading a:hover{
+	color: #333;
+	font-size:18px;
+}
+
 .jumbotron h1.small
 {
     line-height: 88px;
@@ -690,7 +814,7 @@ a.btn-banner:hover, a.btn-banner:focus
 .cta-1, .cta2
 {
 	background-color: #e20612;
-	padding: 40px 0px;
+	padding: 70px 0px 40px;
 }
 p.cta-sub-title
 {
@@ -1460,7 +1584,6 @@ label {
 	display: none !important;
     
 }
-
 
 
 /*-- //gallery-page --*/

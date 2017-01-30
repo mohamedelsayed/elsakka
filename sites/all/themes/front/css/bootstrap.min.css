@@ -23,7 +23,9 @@ audio:not([controls]) {
 display:none
 }
 a {
-	background-color: transparent
+	background-color: transparent;
+	color: 
+	
 }
 a:active, a:hover {
 	outline: 0;
@@ -1036,11 +1038,11 @@ button, input, select, textarea {
 	line-height: inherit
 }
 a {
-	color: #337ab7;
+	color: #000;
 	text-decoration: none
 }
 a:focus, a:hover {
-	color: #23527c;
+	color: #e20612;
 	text-decoration: none;
 }
 a:focus {
