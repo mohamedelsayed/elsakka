@@ -2,7 +2,7 @@
  * @author Author "Mohamed Elsayed"  
  * @author Author Email "me@mohamedelsayed.net"
  * @link http://www.mohamedelsayed.net
- * @copyright Copyright (c) 2016 Programming by "http://www.mohamedelsayed.net"
+ * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */
 jQuery(document).ready(function(){
 	jQuery("form#contact-form").submit(function(e){
@@ -45,34 +45,28 @@ function validate_contact_us_form(){
 	var error = ''; 
 	if(jQuery("#name").val().length === 0){
 		error = error + 'You must enter your Name.<br />';
-		jQuery("#name").addClass("required");
+		jQuery("#name").addClass("error");
     }else{
-    	jQuery("#name").removeClass("required");
+    	jQuery("#name").removeClass("error");
 	}
 	if(!isValidEmailAddress(jQuery("#email").val())){
 		error = error + 'You must enter valid Email.<br />';
-		jQuery("#email").addClass("required");
+		jQuery("#email").addClass("error");
 	}else{
-		jQuery("#email").removeClass("required");
+		jQuery("#email").removeClass("error");
 	}
 	if(jQuery("#subject").val().length === 0){
 		error = error + 'You must enter your Subject.<br />';
-		jQuery("#subject").addClass("required");
+		jQuery("#subject").addClass("error");
 	}else{
-		jQuery("#subject").removeClass("required");
+		jQuery("#subject").removeClass("error");
 	}
 	if(jQuery("#message").val().length === 0){
 		error = error + 'You must enter your Message.<br />';
-		jQuery("#message").addClass("required");
+		jQuery("#message").addClass("error");
 	}else{
-		jQuery("#message").removeClass("required");
-	}	
-	/*if(isNaN(jQuery("#phone").val()) || jQuery("#phone").val().length === 0){
-		error = error + 'You must enter your Phone.<br />';
-		jQuery("#phone").addClass("required");
-	}else{
-		jQuery("#phone").removeClass("required");
-	}*/
+		jQuery("#message").removeClass("error");
+	}		
 	if(error.length !== 0){                         
 	}else{  
 		jQuery.ajax({
@@ -81,13 +75,20 @@ function validate_contact_us_form(){
             data: jQuery('form#contact-form').serialize(),
             async: false,
             beforeSend: function(){
-            	jQuery('#sendmail_result').hide();
+            	jQuery('#sendmessage').hide();
+            	jQuery('#errormessage').hide();  
                 jQuery('#sendmail_ajaxLoading').show(); 
             },
             success:function(result){
+            	error = result.error;
             	jQuery('#sendmail_ajaxLoading').hide();
-                jQuery('#sendmail_result').html(result).show();
-                jQuery("form#contact-form")[0].reset();
+            	//error = 0;
+            	if(error == 0){
+            		jQuery('#sendmessage').show();
+            	}else{
+            		jQuery('#errormessage').show();            		
+            	}            	
+            	//jQuery("form#contact-form")[0].reset();
             }
 		});             
 	}   

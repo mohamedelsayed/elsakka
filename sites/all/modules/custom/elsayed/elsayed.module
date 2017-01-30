@@ -5,6 +5,7 @@
  * @copyright Copyright (c) 2017 Programming by "http://www.mohamedelsayed.net"
  */
 module_load_include('inc', 'content', 'includes/password');
+require "PHPMailer/PHPMailerAutoload.php";
 function elsayed_init(){
     elsayed_update_node_language();
     $GLOBALS['google_api_key'] = 'AIzaSyDGGlo0fNATzYKU761Fx-8VAIJDXu-b3QM';  
@@ -25,14 +26,15 @@ function elsayed_menu() {
         'access arguments' => array('access content')
     );
     $items['contact-us-form'] = array(
-        'title' => t('Contact us'),
+        'title' => __('Contact us'),
         'page callback' => 'elsayed_contact_us_form',
         'page arguments' => array(),
         'type' => MENU_CALLBACK,
         'access arguments' => array('access content'),
+        'delivery callback' => 'drupal_json_output',
     );
     $items['register-form'] = array(
-        'title' => t('Register'),
+        'title' => __('Register'),
         'page callback' => 'elsayed_register_form_custom',
         'page arguments' => array(),
         'type' => MENU_CALLBACK,
@@ -62,7 +64,7 @@ function elsayed_menu() {
         'delivery callback' => 'drupal_json_output',
     );   
     $items['change_currency'] = array(
-        'title' => t('Change Currency'),
+        'title' => __('Change Currency'),
         'page callback' => 'elsayed_change_currency',
         'page arguments' => array(),
         'type' => MENU_CALLBACK,
@@ -282,7 +284,9 @@ function elsayed_get_slider_widget(){
     return $items;	
 }
 function elsayed_contact_us_form(){
-    $base_url_with_lang = elsayed_get_base_url_with_lang();
+	$data = array();
+	$data['error'] = 1;
+	$data['msg'] = '';
     if(isset($_POST)){
         if(!empty($_POST)){
             $name = '';
@@ -301,36 +305,46 @@ function elsayed_contact_us_form(){
             if(isset($_POST['message'])){
                 $message = $_POST['message'];                
             }
-            $phone = '';
-            if(isset($_POST['phone'])){
-                $phone = $_POST['phone'];                
-            }
-            $emailTo = '';
-            $mailsubject = '';
-            if(isset($_POST['nid'])){
-                $nid = $_POST['nid'];                
-                $node = node_load($nid);
-                if(isset($node->field_to_email[LANGUAGE_NONE][0]['email'])){
-                    $emailTo = $node->field_to_email[LANGUAGE_NONE][0]['email'];
-                    $mailsubject = $node->title;
-                }
-            }
+            $mailsubject = variable_get('site_name').' - '.'اتصل بنا';
+			$emailTo = variable_get('contact_mail');
             $tpl = file_get_contents(drupal_get_path('module', 'elsayed').'/emails/contactus.html');
-            $html_message = str_replace(array('{{mailsubject}}', '{{name}}', '{{email}}', '{{subject}}', '{{message}}', '{{phone}}'), 
-                                        array($mailsubject, $name, $email, $subject, $message, $phone), $tpl);            
+            $html_message = str_replace(array('{{mailsubject}}', '{{name}}', '{{email}}', '{{subject}}', '{{message}}'), 
+                                        array($mailsubject, $name, $email, $subject, $message), $tpl);            
             $headers = "From: ".$name." <".$email.">"."\r\n";
             $headers .= "Reply-To: ".strip_tags($email)."\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             if($emailTo != ''){
-                if(mail($emailTo, $subject, $html_message, $headers)){
-                    echo t('Thank you for your message. We will get back to you the soonest.');
-                }else{
-                    echo t('There was a problem sending the Email. Please try again.');
+            	$mail = new PHPMailer();
+                $mail->IsSMTP();
+                $mail->SMTPAuth = true;
+                $mail->CharSet = "UTF-8";
+                $mail->SMTPSecure = 'tls';
+                $mail->Host = 'smtp.gmail.com';
+                $mail->Port = 587;
+                $mail->Username = "shiftsmartmoney@gmail.com";
+                $mail->Password = "smartmoney123456";
+                $mail->From = $email;
+                $mail->FromName = $name;
+                $mail->addAddress($emailTo, variable_get('site_name'));
+				//$mail->addCC("cc@example.com");
+				//$mail->addBCC("cc@example.com");
+                $mail->isHTML(true);
+                $mail->Subject = $mailsubject;
+                $mail->Body = $html_message;
+                $mail->AltBody = "This is the plain text version of the email content";
+                if (!$mail->send()) {
+                //if(mail($emailTo, $subject, $html_message, $headers)){
+                    $data['msg'] = __('Thank you for your message. We will get back to you the soonest.');
+                    $data['error'] = 0;
+                }else{                	
+                    $data['msg'] = __('There was a problem sending the Email. Please try again.');
+					$data['error'] = 1;
                 }
             }
        }
     }	
+	return $data;
 }
 function elsayed_update_node_language() {
     db_query("UPDATE `node` SET `language` = '".LANGUAGE_NONE."' WHERE `node`.`language` != '".LANGUAGE_NONE."'");
@@ -487,7 +501,7 @@ function elsayed_page_validate(&$form, &$form_state){
         $items = entity_load('node', $items_nids);
     }
     if(!empty($items)){
-        form_set_error('title', t("Content can't be added."));
+        form_set_error('title', __("Content can't be added."));
     }
 }
 function elsayed_contact_us_validate(&$form, &$form_state){
@@ -513,7 +527,7 @@ function elsayed_contact_us_validate(&$form, &$form_state){
         $items = entity_load('node', $items_nids);
     }
     if(!empty($items)){
-        form_set_error('title', t("Content can't be added."));
+        form_set_error('title', __("Content can't be added."));
     }
 }
 function elsayed_slugify($text) {
@@ -584,58 +598,58 @@ function elsayed_validate_register_new_user($name, $mail, $pass1, $pass2, $field
     $name_arr = explode(' ', $name);
     if (strpos($name, ' ') > 0 || $name_arr[0] == '' || $hasUpperCaseLetter) {
         $output['error'] = TRUE;
-        $output['msg']['name'] = t('Usernames cannot contain spaces or capital letters.');
+        $output['msg']['name'] = __('Usernames cannot contain spaces or capital letters.');
         //t('Usernames cannot contain spaces or capital letters.');
     }
     $user = user_load_by_name($name);
     if ($user) {
         $output['error'] = TRUE;
-        $output['msg']['name'] = t('Username already exists.');
+        $output['msg']['name'] = __('Username already exists.');
         //t('Username already exists.');
     }
     if (strlen($name) < 1) {
         $output['error'] = TRUE;
-        $output['msg']['name'] = t('Username is required.');
+        $output['msg']['name'] = __('Username is required.');
         //t('Username is required.');
     }
     if ($mail_exist) {
         $output['error'] = TRUE;
-        $output['msg']['mail'] = t('Email already exists.');
+        $output['msg']['mail'] = __('Email already exists.');
         //t('Email already exists.');
     }
     if ($name_mail_exist1) {
         $output['error'] = TRUE;
-        $output['msg']['name'] = t('Email or Username already exists.');
+        $output['msg']['name'] = __('Email or Username already exists.');
         //t('Email already exists.');
     }
     if ($name_mail_exist2) {
         $output['error'] = TRUE;
-        $output['msg']['mail'] = t('Email or Username already exists.');
+        $output['msg']['mail'] = __('Email or Username already exists.');
         //t('Email already exists.');
     }
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         $output['error'] = TRUE;
-        $output['msg']['mail'] = t('Email is not valid.');
+        $output['msg']['mail'] = __('Email is not valid.');
         //t('Email is not valid.');
     }
     if (strlen($pass1) < 6) {
         $output['error'] = TRUE;
-        $output['msg']['pass'] = t('Password must be at least 6 characters.');
+        $output['msg']['pass'] = __('Password must be at least 6 characters.');
         //t('Password must be at least 6 characters.');     
     }
     if ($pass1 != $pass2) {
         $output['error'] = TRUE;
-        $output['msg']['pass'] = t("Passwords don't match.");
+        $output['msg']['pass'] = __("Passwords don't match.");
         //t("Passwords don't match.");
     }
     if (strlen($field_first_name) < 1) {
         $output['error'] = TRUE;
-        $output['msg']['field_first_name'] = t('First Name is required.');
+        $output['msg']['field_first_name'] = __('First Name is required.');
         //t('First Name is required.');
     }
     if (strlen($field_last_name) < 1) {
         $output['error'] = TRUE;
-        $output['msg']['field_last_name'] = t('Last Name is required.');
+        $output['msg']['field_last_name'] = __('Last Name is required.');
         //t('Last Name is required.');
     }
     if ($output['error'] == TRUE) {
@@ -665,7 +679,7 @@ function elsayed_register_new_user($name, $mail, $pass1, $pass2, $field_first_na
       $form_state['values']['pass']['pass2'] = $pass2;
       $form_state['values']['field_first_name'][LANGUAGE_NONE][0]['value'] = $field_first_name;
       $form_state['values']['field_last_name'][LANGUAGE_NONE][0]['value'] = $field_last_name;
-      $form_state['values']['op'] = t('Create new account');
+      $form_state['values']['op'] = __('Create new account');
       drupal_form_submit('user_register_form', $form_state); */
     /* $new_user = array(
       'name' => $name,

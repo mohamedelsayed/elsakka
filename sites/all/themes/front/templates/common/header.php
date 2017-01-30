@@ -9,14 +9,14 @@ $menu_class4 = '';
 $menu_class5 = '';
 $is_front_page = drupal_is_front_page();
 if($is_front_page){
-	$link1 = '#banner';
+	$link1 = '#videoDiv';
 	$link2 = '#about';
 	$link3 = '#portfolio';	
 	$link4 = '#service';
 	$link5 = '#contact';
 	$menu_class1 = $active_class;
 }else{
-	$link1 = $base_url.'#banner';
+	$link1 = $base_url.'#videoDiv';
 	$link2 = $base_url.'#about';
 	$link3 = $base_url.'/products';	
 	$link4 = $base_url.'/videos';
