@@ -198,7 +198,7 @@ if(!empty($product)){
         };
     </script>
    
-    <div id="jssor_1" style="position:relative;margin:0px 2px 0px auto;top:0px;left:0px;width:1200px;height:380px;overflow:hidden;visibility:hidden; float:right;">
+    <div id="jssor_1" style="position:relative;margin:0px 8px 0px auto;top:0px;left:0px;width:1200px;height:380px;overflow:hidden;visibility:hidden; float:right;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
