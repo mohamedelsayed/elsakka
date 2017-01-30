@@ -28,12 +28,19 @@ red{
 	color: #e20612;
     font-weight: bold;	
 }
-.jumbotron p{
-	
-}
 .pagination{
 	width: 100%;
 	float: left;
+}
+#sendmail_ajaxLoading{
+    display:none;   
+    width: 80px;
+    height:15px;
+    background-image: url('../img/tloading.gif');
+    background-repeat: no-repeat;
+   float: none;
+   margin: auto;
+   margin-bottom: 20px;
 }
 /*.submitted{
 	display: none;
@@ -44,14 +51,6 @@ red{
 }
 .required, input[type="text"].required, textarea.required{
 	border: 1px solid #EE4640;
-}
-#sendmail_ajaxLoading, #ajaxLoading{
-    display:none;   
-    width: 80px;
-    height:15px;
-    background-image: url('../img/tloading.gif');
-    background-repeat: no-repeat;
-    float: left;
 }
 #sendmail_result, .cart_result{
     color:#0d9f49;
