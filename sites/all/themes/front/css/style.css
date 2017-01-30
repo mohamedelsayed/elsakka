@@ -31,7 +31,7 @@ Header
 **************************************/
 .section-padding
 {
-	padding: 70px 0px 20px;
+	padding: 70px 0px 0px;
 }
 .center-container{
 	height: 100px;
@@ -937,7 +937,7 @@ p.cta-sub-title
 {
 	background-color: #2C3E50;
 	color: #fff;
-	padding: 15px 80px;
+	padding: 15px 100px;
 	border-right: 1px solid #fff;
 	display: inline-block;
 	position: relative;
@@ -945,7 +945,7 @@ p.cta-sub-title
 .filter:hover{
 	background-color: #E20612;
 	color: #fff;
-	padding: 15px 80px;
+	padding: 15px 100px;
 	border-right: 1px solid #fff;
 	display: inline-block;
 	position: relative;
