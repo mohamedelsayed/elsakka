@@ -3835,6 +3835,27 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 }
 @media (min-width:768px) {
+.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+	.navbar-default .navbar-brand {
+    color: #e20612;
+    width: 122px;
+}
+	header.smaller .logo {
+    height: 56px;
+    width: 0;
+}
+.logo2 {
+    width: 0; 
+    border-top: 5px solid #E20612;
+    border-bottom: 5px solid #E20612;
+}
 .navbar-left {
 	float: left!important
 }
@@ -3969,6 +3990,27 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	background-color: #080808
 }
 @media (max-width:767px) {
+	.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+	.navbar-default .navbar-brand {
+    color: #e20612;
+    width: 122px;
+}
+	header.smaller .logo {
+    height: 56px;
+    width: 0;
+}
+.logo2 {
+    width: 0; 
+    border-top: 5px solid #E20612;
+    border-bottom: 5px solid #E20612;
+}
 .navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header {
 	border-color: #080808
 }
@@ -4259,6 +4301,27 @@ a.badge:focus, a.badge:hover {
 	max-width: 100%
 }
 @media screen and (min-width:768px) {
+	.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+	.navbar-default .navbar-brand {
+    color: #e20612;
+    width: 122px;
+}
+	header.smaller .logo {
+    height: 56px;
+    width: 0;
+}
+.logo2 {
+    width: 0; 
+    border-top: 5px solid #E20612;
+    border-bottom: 5px solid #E20612;
+}
 .jumbotron {
 	padding-top: 48px;
 	padding-bottom: 48px

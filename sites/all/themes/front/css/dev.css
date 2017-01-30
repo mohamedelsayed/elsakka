@@ -15,7 +15,7 @@
 #Developer a:hover{
 	color: #404041;
 }
-#videoDiv {width: 100%; position: relative;height: 600px;overflow: hidden;}
+#videoDiv {width: 100%; position: relative;overflow: hidden;}
 #videoBlock,#videoMessage {width: 100%; position: absolute; top: 0; left: 0;}
 #videoMessage *{padding:0.4em; margin:0}
 #videoMessage {text-shadow: 2px 2px 2px #000000; color:white;z-index:99 }

@@ -294,30 +294,25 @@ header {
 @media all and (max-width: 660px) {
   /* =Header
   -------------------------------------------------------------- */
-  header h1#logo {
-    display: block;
-    float: none;
-    margin: 0 auto;
-    height: 100px;
-    line-height: 100px;
-    text-align: center; }
+  header.smaller .logo {
+      height: 56px;
+	  width: 80%;
+     }
+	 header.smaller .logo2 {
+      height: 56px;
+	  width: 80%;
+     }
   header nav {
-    display: block;
-    float: none;
-    height: 50px;
-    text-align: center;
-    margin: 0 auto; }
+}
     header nav a {
       line-height: 50px;
-      margin: 0 10px; }
+      }
   header.smaller {
-    height: 75px; }
+    height: 70px; }
     header.smaller h1#logo {
-      height: 40px;
-      line-height: 40px;
-      font-size: 30px; }
+      }
     header.smaller nav {
-      height: 35px; }
+      height: 85px; }
       header.smaller nav a {
         line-height: 35px; } }
 @media all and (max-width: 600px) {
@@ -1073,7 +1068,6 @@ margin-top: 5px;
 }
 .footer_social ul li a {
     background: #2e3537 none repeat scroll 0 0;
-    border: 1px solid #2e3537;
     box-shadow: 0 0 0 7px transparent;
     color: #aaa;
     display: block;
@@ -1428,6 +1422,15 @@ cta
 **************************************/
 /** media queries**/
 @media (min-width: 480px) and (max-width: 1023px) {
+	
+.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
     .img-sec, .fig-caption {
     width: 100%;
     float: left;
@@ -1437,9 +1440,37 @@ cta
 }
 }
 @media (min-width: 451px) and (max-width: 768px) {
+	.resp-tabs-list {
+    width: 28%;
+    float: right;
+    padding: 1em;
+    height: 500px;
+    background: #111111;
+    border-radius: 5px;
+}
+.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
 .filter {
-    padding: 5px 18px;
+    padding: 5px 40px;
     margin-bottom: 3px;
+}
+.filter:hover{
+	background-color: #E20612;
+	color: #fff;
+	padding: 5px 40px;
+	border-right: 1px solid #fff;
+	display: inline-block;
+	position: relative;
+}
+.jumbotron h1.small {
+    font-size: 20px;
+	line-height: 0px;
 }
 .wd75
 {
@@ -1450,6 +1481,14 @@ cta
 }
 }
 @media (min-width: 301px) and (max-width: 450px) {
+	.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
 .filter {
     padding: 3px 25px;
     margin-bottom: 3px;
@@ -1490,8 +1529,8 @@ cta
 #videoDiv {
     width: 100%;
     position: relative;
-    /* height: 600px; */
     overflow: hidden;
+	}
 h1.cta-title {
     font-size: 30px;
 }
@@ -1517,6 +1556,14 @@ p.cta-sub-title {
     text-decoration: none;
 }
 @media (min-width: 100px) and (max-width: 300px) {
+	.navbar-nav > li > a {
+    color: #354242;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0px 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
 .filter {
     padding: 3px 14px;
     margin-bottom: 3px;
