@@ -16,20 +16,16 @@
 				    		<img src="<?php echo $base_url.'/'.path_to_theme();?>/img/16.jpg" class="img-responsive" alt=" " />
 			    		</a>
 			    		<div class="mask">
-			    			<a title="" href="#">
+			    			<a title="" href="#" onclick="open_popup();">
 			    				<h4>منتج</h4>
 			    			</a>
-		    			</div>
-                        <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                    
-                      <!-- Modal content -->
-                      <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p>Some text in the Modal..</p>
-                      </div>
-                    
-                    </div>
+		    			</div>                     
+                    <div id="mesagepopboxpopoup" class="mesage-pop" >
+					    <div id="mesagecontent">      <h4><div id="closepopoup" class="closepopoup">X</div></h4><div class="loading"></div>
+					                      <iframe src="https://www.youtube.com/embed/rjjgaYIhi8Y" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+					</div>
+					    <div class="mesage-pop-bg"></div>
+					</div>  
 	    			</div>
 				
                    
@@ -39,31 +35,26 @@
 				<div class="clearfix"> </div>
 			</div>
 			<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
+			function open_popup(){
+    //jQuery("#mesagepopboxpopoup #mesagecontent").html(content); 
+    jQuery("#mesagepopboxpopoup").addClass("alert"); 
+    jQuery("#mesagepopboxpopoup").show();
+    jQuery('body').addClass("mobile-menu-opend");       
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+function close_popup(){
+    jQuery("#mesagepopboxpopoup").hide(); 
+    //jQuery("#mesagepopboxpopoup #mesagecontent").html('');
+    jQuery("#mesagepopboxpopoup").removeClass("alert");
+    jQuery('body').removeClass("mobile-menu-opend");          
 }
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+jQuery(document).ready(function() {
+    jQuery("#mesagepopboxpopoup").on("click",".closepopoup", function(){
+        close_popup();            
+    });
+    jQuery('.mesage-pop-bg').click(function(){
+        close_popup();
+    });
+});
 </script>
 		</div>
 	</div>

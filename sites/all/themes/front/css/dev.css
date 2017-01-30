@@ -283,3 +283,62 @@ ul.action-links a.active, ul.action-links a:hover{
     background-color: #0074BD;
     color:#ffffff;       
 }*/
+.mesage-pop-bg {
+	position:fixed;
+	width:100%;
+	top:0;
+	z-index:101;
+	left:0;
+	height:100%;
+	background:#33465F;
+	opacity: 0.6;
+}
+#mesagecontent {
+	position:fixed;
+	width:460px;
+	top:20%;
+	left:50%;
+	margin:0px 0 0 -230px;
+	padding-bottom:10px;
+	z-index:102;
+	background:#fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: #33465F 0px 0px 10px;
+	-moz-box-shadow: #33465F 0px 0px 10px;
+	box-shadow: #33465F 0px 0px 10px;
+}
+.mesage-pop {
+	display:none;
+}
+#mesagecontent h4 {
+	background:#d9d9d9;
+	padding:11px 10px;
+	color:#00000;
+	border-bottom:solid 1px #BDC3C7;
+	text-transform:capitalize;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0;
+}
+#mesagecontent > div, #mesagecontent > form {
+	margin:10px;
+	border-top: 1px solid #ecf0f1;
+	border-bottom: 1px solid #ecf0f1;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.closealert, .closeeventpopoup, .closevacancypopoup, .closesendmailpopoup {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
