@@ -30,32 +30,7 @@ drupal_set_title($page_title);?>
 		        $videos = $return['items'];?>
 		        <?php include_once 'list_videos.php';?>				
 				<div class="clearfix"> </div>
-			</div>
-			<script type="text/javascript">
-			function open_popup(content_class, vidoe_popup_title){
-				var content = jQuery('.'+content_class).html();
-				jQuery("#mesagepopboxpopoup #mesagecontent_in").html(content); 
-				jQuery('.vidoe_popup_title').html(vidoe_popup_title);
-				jQuery("#mesagepopboxpopoup").addClass("alert"); 
-				jQuery("#mesagepopboxpopoup").show();
-				jQuery('body').addClass("mobile-menu-opend");       
-			}
-			function close_popup(){
-				jQuery("#mesagepopboxpopoup #mesagecontent_in").html('');
-				jQuery('.vidoe_popup_title').html('');
-				jQuery("#mesagepopboxpopoup").hide(); 				
-				jQuery("#mesagepopboxpopoup").removeClass("alert");
-				jQuery('body').removeClass("mobile-menu-opend");          
-			}
-			jQuery(document).ready(function() {
-				jQuery("#mesagepopboxpopoup").on("click",".closepopoup", function(){
-					close_popup();            
-				});
-				jQuery('.mesage-pop-bg').click(function(){
-					close_popup();
-				});
-			});
-			</script>
+			</div>			
 		</div>
 	</div>
 </div>
