@@ -7,9 +7,8 @@ link & button
 body{
 	direction: rtl;
 	font-family: 'Droid Arabic Kufi', sans-serif !important;
-	-webkit-transition: all 0.2s ease-in-out 0.1s;
-   -moz-transition: all 0.2s ease-in-out 0.1s;
-   transition: all 0.2s ease-in-out 0.1s;
+	-webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
 }
 .white
 {
@@ -41,6 +40,9 @@ Header
 }
 .center-container{
 	height: 100px;
+}
+.admin_user‏ .center-container{
+	margin-top: 24px !important;
 }
 .main-navigation
 {
@@ -327,13 +329,22 @@ header {
   left: 0;
   border-bottom: 3px solid #CCC;
   z-index: 9;
+  -webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -ms-transition: height 0.3s;
   -o-transition: height 0.3s;
-  transition: height 0.3s; }
+  transition: height 0.3s; 
+  -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
   header h1#logo {
     display: inline-block;
+	-webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -341,6 +352,8 @@ header {
     transition: all 0.3s; }
   header nav {
     display: inline-block;
+	-webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
 }
     header nav a {
       -webkit-transition: all 0.3s;
@@ -351,6 +364,13 @@ header {
       header nav a:hover {
         color: white; }
   header.smaller {
+	  -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; 
+	  -webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
     height: 65px;
 	margin-bottom: 100px;
 	border-bottom: 2px solid #CCC;
@@ -503,9 +523,7 @@ header {
 	background: #000;
 	color: #ffffff;
 }
-.admin_user‏ .center-container{
-	margin-top: 24px !important;
-}
+
 /*-- gallery-page --*/
 .view {
   width: 31.5%;
@@ -1072,7 +1090,7 @@ margin-top: 5px;
     border-radius: 40px;
     height: 60px;
     line-height: 60px;
-    text-align: left;
+    text-align: right;
     color: #666;
     font-size: 14px;
     padding: 0 35px;
