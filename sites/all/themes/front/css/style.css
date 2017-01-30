@@ -79,7 +79,9 @@ ul.pagination_in li a {
 .resp-tabs-container{
 	margin-bottom: 25px ;
 }
-
+.region-content ,.custom_access_denied{
+	margin-top: 125px ;
+}
 .pagination_in li:first-child a {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1676,6 +1678,9 @@ p.cta-sub-title {
     height: 40px;
     line-height: 40px;
     width: 150px;
+}
+.error{
+    border: 2px solid #F00;
 }
 .jumbotron
 {
