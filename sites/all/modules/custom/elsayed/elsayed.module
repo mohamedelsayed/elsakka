@@ -319,11 +319,11 @@ function elsayed_contact_us_form(){
                 $mail->IsSMTP();
                 $mail->SMTPAuth = true;
                 $mail->CharSet = "UTF-8";
-                $mail->SMTPSecure = 'tls';
-                $mail->Host = 'smtp.gmail.com';
-                $mail->Port = 587;
-                $mail->Username = "shiftsmartmoney@gmail.com";
-                $mail->Password = "smartmoney123456";
+                //$mail->SMTPSecure = 'tls';
+                $mail->Host = 'mail.mohamedelsayed.net';
+                $mail->Port = 26;
+                $mail->Username = "elsakka@mohamedelsayed.net";
+                $mail->Password = "50NnPs0bHEy5";
                 $mail->From = $email;
                 $mail->FromName = $name;
                 $mail->addAddress($emailTo, variable_get('site_name'));
@@ -333,7 +333,7 @@ function elsayed_contact_us_form(){
                 $mail->Subject = $mailsubject;
                 $mail->Body = $html_message;
                 $mail->AltBody = "This is the plain text version of the email content";
-                if (!$mail->send()) {
+                if ($mail->send()) {
                 //if(mail($emailTo, $subject, $html_message, $headers)){
                     $data['msg'] = __('Thank you for your message. We will get back to you the soonest.');
                     $data['error'] = 0;
@@ -1497,7 +1497,7 @@ function elsayed_custom_setting_form($form, &$form_state) {
         '#title' => __('Contact Email'),
         '#discription' => __(''),
         '#type' => 'textfield',
-        '#required' => false,
+        '#required' => true,
         '#default_value' => variable_get('contact_mail', ''),
     );	
     $form['#validate'][] = 'elsayed_custom_setting_form_validation';
