@@ -69,7 +69,7 @@ ul.pagination_in li {display: inline;}
 
 ul.pagination_in li a {
     color: black;
-    float: left;
+    float: right;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
@@ -79,15 +79,17 @@ ul.pagination_in li a {
 .resp-tabs-container{
 	margin-bottom: 25px ;
 }
-
+.region-content ,.custom_access_denied{
+	margin-top: 125px ;
+}
 .pagination_in li:first-child a {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .pagination_in li:last-child a {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 ul.pagination_in li.active a {
@@ -140,6 +142,33 @@ ul.pagination_in li a:hover:not(.active) {
    position: relative;
    color: #fff !important;
    padding: 0.5em 0;
+   text-decoration: none;
+   text-align: center;
+   text-decoration:none;
+   margin:0;
+}
+.title_product{
+    color: #fff;
+	text-decoration: none;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+	padding: 60px 0 0 0 !important;
+}
+.title_product:hover {
+    color: #fff;
+	text-decoration: none !important;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+	padding: 60px 0 0 0 !important;
+}
+.product_p{
+   font-size: 1em;
+   position: relative;
+   color: #fff !important;
+   padding: 0.5em 0;
+   line-height: 23px;
    text-decoration: none;
    text-align: center;
    text-decoration:none;
@@ -473,7 +502,7 @@ header {
   width: 31.5%;
   height: 100%;
    margin: 10px;
-   float: left;
+   float: right;
    overflow: hidden;
    position: relative;
    text-align: center;
@@ -1649,6 +1678,9 @@ p.cta-sub-title {
     height: 40px;
     line-height: 40px;
     width: 150px;
+}
+.error{
+    border: 2px solid #F00;
 }
 .jumbotron
 {
