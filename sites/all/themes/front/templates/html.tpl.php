@@ -39,7 +39,7 @@ $base_url_with_lang = elsayed_get_base_url_with_lang();?>
     function init() {
         window.addEventListener('scroll', function(e){
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 300,
+                shrinkOn = 70,
                 header = document.querySelector("header");
             if (distanceY > shrinkOn) {
                 classie.add(header,"smaller");
