@@ -82,13 +82,12 @@ function validate_contact_us_form(){
             success:function(result){
             	error = result.error;
             	jQuery('#sendmail_ajaxLoading').hide();
-            	//error = 0;
             	if(error == 0){
             		jQuery('#sendmessage').show();
             	}else{
             		jQuery('#errormessage').show();            		
             	}            	
-            	//jQuery("form#contact-form")[0].reset();
+            	jQuery("form#contact-form")[0].reset();
             }
 		});             
 	}   
