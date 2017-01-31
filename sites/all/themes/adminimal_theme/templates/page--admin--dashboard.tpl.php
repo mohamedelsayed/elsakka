@@ -45,7 +45,63 @@
 			<?php print render($page['help']); ?>
 		</div>
 	<?php endif; ?>
+		<div class="">
 
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic1.png">
+		    		</div>
+		    		<h3>Settings</h3>
+		    	</a>
+	    	</div>
+
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic2.png">
+		    		</div>
+		    		<h3>Widgets</h3>
+		    	</a>
+	    	</div>
+
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic3.png">
+		    		</div>
+		    		<h3>Categories</h3>
+		    	</a>
+	    	</div>
+
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic4.png">
+		    		</div>
+		    		<h3>Products</h3>
+		    	</a>
+	    	</div>
+
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic5.png">
+		    		</div>
+		    		<h3>Videos</h3>
+		    	</a>
+	    	</div>
+
+	    	<div class="item col-md-3 col-md-offset-1">
+	    		<a href="#">
+		    		<div class="icon">
+		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic6.png">
+		    		</div>
+		    		<h3>People</h3>
+		    	</a>
+	    	</div>
+
+    	</div>
 	<?php if (isset($page['content_before'])): ?>
 		<div id="content-before">
 			<?php print render($page['content_before']); ?>
@@ -73,7 +129,6 @@
     <?php endif; ?>
   
   </div>
-
 	<?php if (isset($page['content_after'])): ?>
 		<div id="content-after">
 			<?php print render($page['content_after']); ?>
