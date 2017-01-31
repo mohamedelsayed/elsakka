@@ -132,6 +132,7 @@ ul.pagination_in li a:hover:not(.active) {
 	text-decoration: none;
     text-align: center;
     position: relative;
+	cursor: pointer;
     font-size: 2em;
 	padding: 4em 0;
 }
@@ -261,61 +262,62 @@ ul.pagination_in li a:hover:not(.active) {
 }
   
   
-  /* jssor slider bullet navigator skin 05 css */
+  /* jssor slider bullet navigator skin 01 css */
         /*
-        .jssorb05 div           (normal)
-        .jssorb05 div:hover     (normal mouseover)
-        .jssorb05 .av           (active)
-        .jssorb05 .av:hover     (active mouseover)
-        .jssorb05 .dn           (mousedown)
+        .jssorb01 div           (normal)
+        .jssorb01 div:hover     (normal mouseover)
+        .jssorb01 .av           (active)
+        .jssorb01 .av:hover     (active mouseover)
+        .jssorb01 .dn           (mousedown)
         */
-        .jssorb05 {
+        .jssorb01 {
             position: absolute;
-			width: 50% !important;
         }
-        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+        .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
             position: absolute;
             /* size of bullet elment */
-            width: 16px;
-            height: 16px;
-            background: url('../img/b05.png') no-repeat;
+            width: 12px;
+            height: 12px;
+            filter: alpha(opacity=70);
+            opacity: .7;
             overflow: hidden;
             cursor: pointer;
+            border: #000 1px solid;
         }
-        .jssorb05 div { background-position: -7px -7px; }
-        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
-        .jssorb05 .av { background-position: -67px -7px; }
-        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+        .jssorb01 div { background-color: gray; }
+        .jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+        .jssorb01 .av { background-color: #fff; }
+        .jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
 
-        /* jssor slider arrow navigator skin 22 css */
+        /* jssor slider arrow navigator skin 05 css */
         /*
-        .jssora22l                  (normal)
-        .jssora22r                  (normal)
-        .jssora22l:hover            (normal mouseover)
-        .jssora22r:hover            (normal mouseover)
-        .jssora22l.jssora22ldn      (mousedown)
-        .jssora22r.jssora22rdn      (mousedown)
-        .jssora22l.jssora22lds      (disabled)
-        .jssora22r.jssora22rds      (disabled)
+        .jssora05l                  (normal)
+        .jssora05r                  (normal)
+        .jssora05l:hover            (normal mouseover)
+        .jssora05r:hover            (normal mouseover)
+        .jssora05l.jssora05ldn      (mousedown)
+        .jssora05r.jssora05rdn      (mousedown)
+        .jssora05l.jssora05lds      (disabled)
+        .jssora05r.jssora05rds      (disabled)
         */
-        .jssora22l, .jssora22r {
+        .jssora05l, .jssora05r {
             display: block;
             position: absolute;
             /* size of arrow element */
             width: 40px;
-            height: 58px;
+            height: 40px;
             cursor: pointer;
-            background: url('../img/a22.png') center center no-repeat;
+            background: url('../img/a17.png') no-repeat;
             overflow: hidden;
         }
-        .jssora22l { background-position: -10px -31px; }
-        .jssora22r { background-position: -70px -31px; }
-        .jssora22l:hover { background-position: -130px -31px; }
-        .jssora22r:hover { background-position: -190px -31px; }
-        .jssora22l.jssora22ldn { background-position: -250px -31px; }
-        .jssora22r.jssora22rdn { background-position: -310px -31px; }
-        .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
-        .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
 
 /* =Header
 -------------------------------------------------------------- */
@@ -370,6 +372,18 @@ header {
 	  -webkit-transition-duration: 5s; /* Safari */
     transition-duration: 5s;
     height: 65px;
+	margin-bottom: 100px;
+	border-bottom: 2px solid #CCC;
+	 }
+	body.adminimal-menu header.smaller {
+	  -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; 
+	  -webkit-transition-duration: 5s; /* Safari */
+    transition-duration: 5s;
+    height: 93px;
 	margin-bottom: 100px;
 	border-bottom: 2px solid #CCC;
 	 }
@@ -989,6 +1003,7 @@ p.cta-sub-title
 }
 .filter
 {
+	box-shadow: 0 6px 8px -6px black;
 	background-color: #2C3E50;
 	color: #fff;
 	padding: 15px 100px;
@@ -1747,7 +1762,16 @@ label {
 	display: none !important;
     
 }
-
+.vidoe_popup_title{
+	color: #e20511;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 12px;
+    text-align: center;
+}
+.closepopoup{
+	cursor: pointer;
+}
 
 /*-- //gallery-page --*/
 @keyframes bounceY {

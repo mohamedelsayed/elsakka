@@ -29,7 +29,7 @@
 			</div>                     
 			<div class="video_item_hidden<?php echo $video->nid;?>" style="display: none;">
 				<?php if($video_file != ''){?>
-					<video style="object-fit: fill;min-height: 532px;" width="100%" height="100%" controls>
+					<video style="object-fit: fill;max-height: 450px;" width="100%" height="100%" controls>
 						<source src="<?php echo $video_file;?>" type="video/mp4"></source>
 					</video>	
 				<?php }elseif($youtube_link != ''){
