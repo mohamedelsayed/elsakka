@@ -298,6 +298,7 @@ ul.action-links a.active, ul.action-links a:hover{
     border-radius: 3px;
     box-shadow: 0 0 10px #33465f;
     left: 14%;
+	height: 500px;
     position: fixed;
     width: 900px;
     z-index: 102;
@@ -306,7 +307,7 @@ ul.action-links a.active, ul.action-links a:hover{
 	display:none;
 }
 #mesagecontent h4 {
-	background:#000000;
+	background:#eeeeee;
 	padding:5px 10px;
 	color:#00000;
 	border-bottom:solid 1px #BDC3C7;
@@ -320,7 +321,8 @@ ul.action-links a.active, ul.action-links a:hover{
     margin: 0;
 }
 #mesagecontent > div, #mesagecontent > form {
-	margin:10px;
+	margin: 5px;
+	height: 430px;
 }
 .closealert, .closeeventpopoup, .closevacancypopoup, .closesendmailpopoup {
     cursor: pointer;
