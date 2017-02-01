@@ -28,42 +28,42 @@ if($is_front_page){
 	}
 }?>   
 <header>
-<div class="center-container">
-	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a title="<?php echo variable_get('site_name');?>"  class="navbar-brand" href="<?php echo $base_url;?>">
-					<img alt="<?php echo variable_get('site_name');?>" src="<?php echo $base_url.'/'.path_to_theme();?>/img/logo.png" class="logo">
-				</a>
+	<div class="center-container">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a title="<?php echo variable_get('site_name');?>"  class="navbar-brand" href="<?php echo $base_url;?>">
+						<img alt="<?php echo variable_get('site_name');?>" src="<?php echo $base_url.'/'.path_to_theme();?>/img/logo.png" class="logo">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="<?php echo $menu_class1;?>">
+							<a href="<?php echo $link1;?>"><?php echo __('الرئيسية');?></a>
+						</li>
+						<li class="<?php echo $menu_class2;?>">
+							<a href="<?php echo $link2;?>"><?php echo __('عن الشركة');?></a>
+						</li>
+						<li class="<?php echo $menu_class3;?>">
+							<a href="<?php echo $link3;?>"><?php echo __('المنتجات');?></a>
+						</li>
+						<li class="<?php echo $menu_class4;?>">
+							<a href="<?php echo $link4;?>"><?php echo __('مكتبة الفيديو');?></a>
+						</li>
+						<li class="<?php echo $menu_class5;?>">
+							<a href="<?php echo $link5;?>"><?php echo __('اتصل بنا');?></a>
+						</li>
+					</ul>
+					<a title="<?php echo variable_get('site_name');?>"  class="navbar-brand" href="<?php echo $base_url;?>">
+						<img  alt="<?php echo variable_get('site_name');?>"  src="<?php echo $base_url.'/'.path_to_theme();?>/img/logo2.png" class="logo2">
+					</a>
+				</div>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="<?php echo $menu_class1;?>">
-						<a href="<?php echo $link1;?>"><?php echo __('الرئيسية');?></a>
-					</li>
-					<li class="<?php echo $menu_class2;?>">
-						<a href="<?php echo $link2;?>"><?php echo __('عن الشركة');?></a>
-					</li>
-					<li class="<?php echo $menu_class3;?>">
-						<a href="<?php echo $link3;?>"><?php echo __('المنتجات');?></a>
-					</li>
-					<li class="<?php echo $menu_class4;?>">
-						<a href="<?php echo $link4;?>"><?php echo __('مكتبة الفيديو');?></a>
-					</li>
-					<li class="<?php echo $menu_class5;?>">
-						<a href="<?php echo $link5;?>"><?php echo __('اتصل بنا');?></a>
-					</li>
-				</ul>
-				<a title="<?php echo variable_get('site_name');?>"  class="navbar-brand" href="<?php echo $base_url;?>">
-					<img  alt="<?php echo variable_get('site_name');?>"  src="<?php echo $base_url.'/'.path_to_theme();?>/img/logo2.png" class="logo2">
-				</a>
-			</div>
-		</div>
-	</nav>
-</div>
+		</nav>
+	</div>
 </header>

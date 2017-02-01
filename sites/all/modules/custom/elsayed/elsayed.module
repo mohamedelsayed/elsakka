@@ -11,6 +11,7 @@ function elsayed_init(){
     $GLOBALS['google_api_key'] = 'AIzaSyDGGlo0fNATzYKU761Fx-8VAIJDXu-b3QM';  
     $GLOBALS['limit'] = 6;
     $GLOBALS['default_image'] = $GLOBALS['base_url'].'/'.path_to_theme().'/img/blank.png';	
+	elsayed_redirect_admin_to_dashboard();
 }
 function elsayed_menu() {
     $items['page_not_found'] = array(
@@ -1603,6 +1604,24 @@ function elsayed_video_node_form_form_validation($form, &$form_state){
 	if(trim($field_youtube_link) != ''){
 		if (!(strpos($field_youtube_link, 'youtube') > 0)) {
 			form_set_error('field_youtube_link', __('Please enter valid Youtube link.'));
+		}
+	}	
+}
+function elsayed_get_admin_theme_path(){
+	global $admin_theme_path;
+	if($admin_theme_path == ''){
+		$admin_theme_path = drupal_get_path('theme', variable_get('admin_theme'));	
+	}
+	return $admin_theme_path;
+}
+function elsayed_redirect_admin_to_dashboard(){
+	global $base_url;
+	$redirect = $base_url.'/admin/dashboard';
+	$arg1 = arg(1);
+	$arg0 = arg(0);
+	if($arg0 == 'admin'){
+		if(trim($arg1) == ''){
+			drupal_goto("$redirect");
 		}
 	}	
 }

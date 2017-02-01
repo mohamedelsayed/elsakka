@@ -1,103 +1,78 @@
-<?php
-/**
-* @file
-* Main page template.
-*/
-?>
-
+<?php global $base_url;?>
 <div id="branding" class="clearfix">
-
 	<?php print $breadcrumb; ?>
-
 	<?php print render($title_prefix); ?>
-
 	<?php if ($title): ?>
 		<h1 class="page-title"><?php print $title; ?></h1>
 	<?php endif; ?>
-
 	<?php print render($title_suffix); ?>
-
 </div>
-
 <div id="navigation">
-
   <?php if ($primary_local_tasks): ?>
     <?php print render($primary_local_tasks); ?>
   <?php endif; ?>
-
   <?php if ($secondary_local_tasks): ?>
     <div class="tabs-secondary clearfix"><ul class="tabs secondary"><?php print render($secondary_local_tasks); ?></ul></div>
   <?php endif; ?>
-
 </div>
-
 <div id="page">
-
 	<div id="content" class="clearfix">
 		<div class="element-invisible"><a id="main-content"></a></div>
-
 	<?php if ($messages): ?>
 		<div id="console" class="clearfix"><?php print $messages; ?></div>
 	<?php endif; ?>
-
 	<?php if ($page['help']): ?>
 		<div id="help">
 			<?php print render($page['help']); ?>
 		</div>
 	<?php endif; ?>
 		<div class="">
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/custom/custom-settings';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic1.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic1.png">
 		    		</div>
-		    		<h3>Settings</h3>
+		    		<h3><?php echo __('Settings');?></h3>
 		    	</a>
 	    	</div>
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/custom/content/widget';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic2.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic2.png">
 		    		</div>
-		    		<h3>Widgets</h3>
+		    		<h3><?php echo __('Widgets');?></h3>
 		    	</a>
 	    	</div>
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/custom/content/category';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic3.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic3.png">
 		    		</div>
-		    		<h3>Categories</h3>
+		    		<h3><?php echo __('Categories');?></h3>
 		    	</a>
 	    	</div>
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/custom/content/product';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic4.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic4.png">
 		    		</div>
-		    		<h3>Products</h3>
+		    		<h3><?php echo __('Products');?></h3>
 		    	</a>
 	    	</div>
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/custom/content/video';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic5.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic5.png">
 		    		</div>
-		    		<h3>Videos</h3>
+		    		<h3><?php echo __('Videos');?></h3>
 		    	</a>
 	    	</div>
-
 	    	<div class="item col-md-3 col-md-offset-1">
-	    		<a href="#">
+	    		<a href="<?php echo $base_url.'/admin/people';?>">
 		    		<div class="icon">
-		    			<img src="http://localhost/myworkspace/elsakka/sites/all/themes/adminimal_theme/images/pic6.png">
+		    			<img src="<?php echo $base_url.'/'.elsayed_get_admin_theme_path();?>/images/pic6.png">
 		    		</div>
-		    		<h3>People</h3>
+		    		<h3><?php echo __('Users');?></h3>
 		    	</a>
 	    	</div>
     	</div>
