@@ -299,6 +299,7 @@ ul.action-links a.active, ul.action-links a:hover{
     box-shadow: 0 0 10px #33465f;
     left: 14%;
 	height: 500px;
+	margin-top: 25px;
     position: fixed;
     width: 900px;
     z-index: 102;
