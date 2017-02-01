@@ -204,6 +204,7 @@ ul.pagination_in li a:hover:not(.active) {
 }
 .view_1-eighth p {
    color: #333;
+   padding: 0 5px;
    -webkit-transform: translateY(-200px);
    -moz-transform: translateY(-200px);
    -o-transform: translateY(-200px);
@@ -952,6 +953,9 @@ p.cta-sub-title
 .service-box {
     margin: 0 0 60px;
     display: inline-block;
+}
+.form-group .error{
+    border: 2px solid #E20612;
 }
 .service-box .service-icon {
     width: 75px;
