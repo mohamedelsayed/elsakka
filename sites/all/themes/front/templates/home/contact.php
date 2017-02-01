@@ -26,7 +26,7 @@
                         <div class="validation"></div>
                     </div>
                     <div class="col-md-4 form-group">
-                        <input type="email" class="form-control text-field-box" name="email" id="email" placeholder="<?php echo __('البريد الالكتروني');?>"  />
+                        <input type="text" class="form-control text-field-box" name="email" id="email" placeholder="<?php echo __('البريد الالكتروني');?>"  />
                         <div class="validation"></div>
                     </div>
                     <div class="col-md-4 form-group">
