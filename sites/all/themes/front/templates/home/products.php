@@ -33,8 +33,8 @@
 			            $product_description = elsayed_cut_string($product->body[LANGUAGE_NONE][0]['value'], 250);
 			        }
 			        $image = $GLOBALS['default_image'];
-			        if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
-			            $image = image_style_url('thumbnail', $product->field_image[LANGUAGE_NONE][0]['uri']);
+			        if(isset($product->field_images[LANGUAGE_NONE][0]['uri'])){
+			            $image = image_style_url('thumbnail', $product->field_images[LANGUAGE_NONE][0]['uri']);
 			        }
 					$field_category = '';
 					$category_nid = 0;

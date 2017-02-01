@@ -7,8 +7,8 @@
             $product_description = elsayed_cut_string($product->body[LANGUAGE_NONE][0]['value'], 250);
         }
         $image = $GLOBALS['default_image'];
-        if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
-            $image = image_style_url('thumbnail', $product->field_image[LANGUAGE_NONE][0]['uri']);
+        if(isset($product->field_images[LANGUAGE_NONE][0]['uri'])){
+            $image = image_style_url('thumbnail', $product->field_images[LANGUAGE_NONE][0]['uri']);
         }?>        
         <div class="view_1 view_1-eighth filimg col-md-4 col-sm-4 col-xs-12">
             <a class="b-link-stripe b-animate-go swipebox"  title="<?php echo $product_title;?>">

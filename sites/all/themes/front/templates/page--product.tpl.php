@@ -16,10 +16,10 @@ if(!empty($product)){
     }
     $image = $GLOBALS['default_image'];
     $default_image = $GLOBALS['default_image'];
-    if(isset($product->field_image[LANGUAGE_NONE][0]['uri'])){
-        $image = image_style_url('large', $product->field_image[LANGUAGE_NONE][0]['uri']);
-        $default_image = image_style_url('default_size', $product->field_image[LANGUAGE_NONE][0]['uri']);
-    }
+    /*if(isset($product->field_images[LANGUAGE_NONE][0]['uri'])){
+        $image = image_style_url('large', $product->field_images[LANGUAGE_NONE][0]['uri']);
+        $default_image = image_style_url('default_size', $product->field_images[LANGUAGE_NONE][0]['uri']);
+    }*/
     $field_category = '';
 	$category_url = '';
     if(isset($product->field_category[LANGUAGE_NONE][0]['target_id'])){
@@ -47,8 +47,8 @@ if(!empty($product)){
             </div>
             <div class="row">
                 <div class="col-md-12" style="margin-bottom: 30px;">                
-	            	<?php if(isset($product->field_image[LANGUAGE_NONE])){
-	            		$images = $product->field_image[LANGUAGE_NONE];
+	            	<?php if(isset($product->field_images[LANGUAGE_NONE])){
+	            		$images = $product->field_images[LANGUAGE_NONE];
 	            		if(!empty($images)){?>
 	            			<ul class="bxslider">
 	                			<?php foreach ($images as $key => $image) {
