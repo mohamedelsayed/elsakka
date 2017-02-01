@@ -24,7 +24,7 @@ drupal_set_title($page_title);?>
 		<div class="container">
 			<div class="agileinfo_gallery_grids">
 				<h3 class="tittle"><?php echo $page_title;?></h3>
-				<?php $home = 0;$limit = 3;$page = 1;$category = 0;
+				<?php $home = 0;$limit = $GLOBALS['limit'];$page = 1;$category = 0;
 		        if(isset($_GET['page'])){
 		            $page = $_GET['page'];
 		        }

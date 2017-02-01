@@ -111,9 +111,11 @@ function open_popup(content_class, vidoe_popup_title){
 	jQuery('.vidoe_popup_title').html(vidoe_popup_title);
 	jQuery("#mesagepopboxpopoup").addClass("alert"); 
 	jQuery("#mesagepopboxpopoup").show();
-	jQuery('body').addClass("mobile-menu-opend");       
+	jQuery('body').addClass("mobile-menu-opend");   
+	//jQuery('#mesagecontent').fadeIn();    
 }
 function close_popup(){
+	//jQuery('#mesagecontent').fadeOut();
 	jQuery("#mesagepopboxpopoup #mesagecontent_in").html('');
 	jQuery('.vidoe_popup_title').html('');
 	jQuery("#mesagepopboxpopoup").hide(); 				

@@ -22,7 +22,7 @@ drupal_set_title($page_title);?>
 <div class="facilities">
 	<div class="container">
 		<h3 class="tittle"><?php echo $page_title;?></h3> 			
-		<?php $home = 0;$limit = 3;$page = 1;
+		<?php $home = 0;$limit = $GLOBALS['limit'];$page = 1;
         if(isset($_GET['page'])){
             $page = $_GET['page'];
         }

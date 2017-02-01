@@ -1541,7 +1541,7 @@ function elsayed_redirect_user_to_admin(){
 		if(user_is_logged_in()){
 			if(elsayed_is_user_admin()){
 				global $base_url;
-				$redirect = $base_url.'/admin';
+				$redirect = $base_url.'/admin/dashboard';
                 drupal_goto("$redirect");  				
 			}
 		}		
