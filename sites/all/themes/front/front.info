@@ -10,6 +10,7 @@ stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/slick-team-slider.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/jplayer.blue.monday.min.css
+stylesheets[all][] = css/jquery.bxslider.css
 stylesheets[all][] = css/dev.css
 ; SCRIPTS
 ;----------------------------------------------------
@@ -26,7 +27,7 @@ scripts[] = js/jquery.swipebox.min.js
 ;scripts[] = js/jquery.vide.min.js
 scripts[] = js/lsb.min.js
 scripts[] = js/classie.js
-scripts[] = js/jssor.slider-22.1.8.min.js
+scripts[] = js/jquery.bxslider.js
 scripts[] = js/dev.js
 
 ; REGIONS

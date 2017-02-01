@@ -332,3 +332,10 @@ ul.action-links a.active, ul.action-links a:hover{
     right: 10px;
     top: 10px;
 }
+.bx-wrapper img{
+	margin: auto;
+}
+.bx-wrapper{
+	border:none;
+	box-shadow: none;
+}
