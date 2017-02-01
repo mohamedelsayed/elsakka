@@ -309,6 +309,8 @@ ul.action-links a.active, ul.action-links a:hover{
 #mesagecontent h4 {
 	background:#eeeeee;
 	padding:5px 10px;
+	float: right;
+	width: 100%;
 	color:#00000;
 	border-bottom:solid 1px #BDC3C7;
 	text-transform:capitalize;
@@ -321,8 +323,8 @@ ul.action-links a.active, ul.action-links a:hover{
     margin: 0;
 }
 #mesagecontent > div, #mesagecontent > form {
-	margin: 5px;
-	height: 430px;
+	margin: 0px;
+	height: 435px;
 }
 .closealert, .closeeventpopoup, .closevacancypopoup, .closesendmailpopoup {
     cursor: pointer;

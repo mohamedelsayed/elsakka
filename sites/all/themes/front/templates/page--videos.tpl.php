@@ -10,7 +10,10 @@
 drupal_set_title($page_title);?>
 <div id="mesagepopboxpopoup" class="mesage-pop" >
 	<div id="mesagecontent">
-		<h4><div class="vidoe_popup_title"></div><div id="closepopoup" class="closepopoup">X</div></h4>
+		<h4>
+        <div id="closepopoup" class="closepopoup">
+        <img src="<?php echo $base_url.'/'.path_to_theme();?>/img/closepopoup.png"></div>
+        <div class="vidoe_popup_title"></div></h4>
 		<div id="mesagecontent_in">
 		</div>
 	</div>
