@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="row text-center white">
 				<h1 class="cta-title"><?php echo $title;?></h1>
-				<p class="cta-sub-title"><?php echo $body;?></p>
+				<div class="cta-sub-title"><?php echo $body;?></div>
 			</div>
 		</div>
 	</div>
