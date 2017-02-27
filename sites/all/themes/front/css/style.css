@@ -940,7 +940,7 @@ a.btn-banner:hover, a.btn-banner:focus
 	background-color: #e20612;
 	padding: 70px 0px 40px;
 }
-p.cta-sub-title
+.cta-sub-title
 {
 	font-size: 23px;
 }
@@ -1011,7 +1011,9 @@ p.cta-sub-title
 	box-shadow: 0 6px 8px -6px black;
 	background-color: #2C3E50;
 	color: #fff;
-	padding: 15px 100px;
+	padding: 15px 0px;
+	margin-bottom: 20px;
+	width: 20%;
 	border-right: 1px solid #fff;
 	display: inline-block;
 	position: relative;
@@ -1019,14 +1021,13 @@ p.cta-sub-title
 .filter:hover{
 	background-color: #E20612;
 	color: #fff;
-	padding: 15px 100px;
 	border-right: 1px solid #fff;
 	display: inline-block;
 	position: relative;
 }
 .filimg
 {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 .fil-btn .active
 {
