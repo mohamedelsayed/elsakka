@@ -752,8 +752,13 @@ function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1){
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
             ->entityCondition('bundle', 'product')
-            ->propertyCondition('status', 1)
-            ->propertyOrderBy('created', 'DESC');
+            ->propertyCondition('status', 1);
+    if($home == 1){
+    	$query->addTag('random')
+		->range(0, $limit);
+	}else{
+		$query->propertyOrderBy('created', 'DESC');		
+	}
     $query->addMetaData('account', user_load(1)); 
     if($category != 0){
         $query->fieldCondition('field_category', 'target_id', $category, '=');
@@ -779,6 +784,9 @@ function elsayed_get_products($category = 0, $home = 0, $limit = 0, $page = 1){
         $return = $items;
     }
     return $return;  
+}
+function elsayed_query_random_alter($query) {
+	$query->orderRandom();
 }
 function elsayed_products(){
     $output = '';
