@@ -1042,7 +1042,7 @@ a {
 	text-decoration: none
 }
 a:focus, a:hover {
-	color: #ffffff;
+	color: #E30F18;
 	text-decoration: none;
 }
 a:focus {
@@ -4287,6 +4287,7 @@ a.badge:focus, a.badge:hover {
 .jumbotron p {
 	margin-bottom: 15px;
 	font-size: 21px;
+	line-height: 28px;
 	font-weight: 200
 }
 .jumbotron>hr {

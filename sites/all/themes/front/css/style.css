@@ -537,6 +537,37 @@ header {
 	color: #ffffff;
 }
 
+#about .inpt{
+	background: #ffffff;
+    border-radius: 40px;
+    color: #e20612;
+    cursor: pointer;
+    display: block;
+	text-decoration:none;
+    font-size: 18px;
+    font-weight: 400;
+    height: 48px;
+    line-height: 48px;
+    margin: 25px auto 0;
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+#about .inpt:hover{
+	text-decoration:none;
+	background: #000;
+	color: #ffffff;
+}
+
 /*-- gallery-page --*/
 .view {
   width: 31.5%;
@@ -737,7 +768,7 @@ header {
 }
 .jumbotron .big
 {
-	width: 605px;
+	width: 740px;
     line-height: 25px;
     border-width: 0px;
     margin: 0px;
@@ -1782,7 +1813,13 @@ label {
 .closepopoup img{
 	width: 50px;
 }
-
+#block-system-main .field-items{
+	line-height: 30px;
+}
+#block-system-main strong{
+	color: #E20612;
+	font-size:20px;
+}
 /*-- //gallery-page --*/
 @keyframes bounceY {
     0% { transform: translateY(-205px);}
