@@ -1564,18 +1564,33 @@ function elsayed_redirect_user_to_admin(){
 	}		
 }
 function elsayed_cut_string($str = '', $val = 0){
-	$return = '';
+	$return = '';	
 	$str_without_tags = strip_tags($str);
 	$return = substr($str_without_tags, 0, $val);
 	/*$strArr = split(" ", $str_without_tags);
 	if(count($strArr) > $val){
 		for($index=0; $index<$val; $index++){
-			$return = $strArr[$index].' ';
+			$return = .$strArr[$index].' ';
 		}
 		$return .= '...';
 	}else {
 		$return = $str_without_tags;
 	}*/
+	return $return;
+}
+function elsayed_cut_string_words($str = '', $val = 0){
+	$return = '';	
+	$str_without_tags = strip_tags($str);
+	//$return = substr($str_without_tags, 0, $val);
+	$strArr = split(" ", $str_without_tags);
+	if(count($strArr) > $val){
+		for($index=0; $index<$val; $index++){
+			$return .= $strArr[$index].' ';
+		}
+		$return .= '...';
+	}else {
+		$return = $str_without_tags;
+	}
 	return $return;
 }
 function elsayed_get_videos($category = 0, $home = 0, $limit = 0, $page = 1){
