@@ -1351,6 +1351,9 @@ i.resp-tab-item.lost {
 	margin:0.5em 0 0.5em 2.8em;
 	font-weight:600;
 	font-size:1em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .resp-tab-active {
    border:2px solid #ffc600;
