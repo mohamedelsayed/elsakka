@@ -1354,6 +1354,7 @@ i.resp-tab-item.lost {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	margin: 5px;
 }
 .resp-tab-active {
    border:2px solid #ffc600;
