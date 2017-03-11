@@ -41,6 +41,13 @@ if (strpos($http_host, 'mohamedelsayed.net') !== FALSE) {
 	$conf['css_gzip_compression'] = TRUE;
  	$conf['js_gzip_compression'] = TRUE;	
 }
+if (strpos($http_host, 'elsakka.co') !== FALSE) {
+	$conf['css_gzip_compression'] = TRUE;
+ 	$conf['js_gzip_compression'] = TRUE;
+    $database = 'elsakka';   
+    $username = 'elsakka';
+    $password = 'ToY1PGRwcXHE';   
+}
 $databases = array (
   'default' => 
   array (
